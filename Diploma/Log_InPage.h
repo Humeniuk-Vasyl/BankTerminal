@@ -377,7 +377,7 @@ namespace Diploma {
 				cmd->ExecuteNonQuery();
 				if (dtbl->Rows->Count == 1)
 				{
-					MessageBox::Show("login successful!");
+					//MessageBox::Show("login successful!");
 					//goiòg to next page
 					this->Hide();
 					MainMenuPage^ _MainMenuPage1 = gcnew MainMenuPage();

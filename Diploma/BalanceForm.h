@@ -127,7 +127,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// mainMenuToolStripMenuItem
@@ -161,7 +161,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// label4

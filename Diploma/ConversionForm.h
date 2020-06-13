@@ -1,5 +1,7 @@
 #pragma once
 #include "EndForm.h"
+#include <stdlib.h>
+
 namespace Diploma {
 
 	using namespace System;
@@ -44,11 +46,18 @@ namespace Diploma {
 	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox2;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox1;
+	private: ::JMetroTextBox::JMetroTextBox^ —urrencyNumber2;
+	private: ::JMetroTextBox::JMetroTextBox^ —urrencyNumber1;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::ListBox^ listBox1;
-	private: System::Windows::Forms::ListBox^ listBox2;
+	private: System::Windows::Forms::ListBox^ CurrencyBox1;
+	private: System::Windows::Forms::ListBox^ CurrencyBox2;
+
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox3;
@@ -67,8 +76,10 @@ namespace Diploma {
 	private: System::Windows::Forms::Label^ label13;
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox9;
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox10;
-	private: ::JThinButton::JThinButton^ jThinButton7;
-	private: ::JThinButton::JThinButton^ jThinButton1;
+	private: ::JThinButton::JThinButton^ CalculateButton;
+	private: ::JThinButton::JThinButton^ AdditionallyButton;
+
+
 	private: ::JDragControl::JDragControl^ jDragControl1;
 	private: System::ComponentModel::IContainer^ components;
 
@@ -95,11 +106,11 @@ namespace Diploma {
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->jMetroTextBox2 = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jMetroTextBox1 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->—urrencyNumber2 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->—urrencyNumber1 = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->CurrencyBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->CurrencyBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->jMetroTextBox3 = (gcnew ::JMetroTextBox::JMetroTextBox());
@@ -118,8 +129,8 @@ namespace Diploma {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->jMetroTextBox9 = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->jMetroTextBox10 = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jThinButton7 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton1 = (gcnew ::JThinButton::JThinButton());
+			this->CalculateButton = (gcnew ::JThinButton::JThinButton());
+			this->AdditionallyButton = (gcnew ::JThinButton::JThinButton());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->panel1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -164,7 +175,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(700, 28);
+			this->menuStrip1->Size = System::Drawing::Size(700, 27);
 			this->menuStrip1->TabIndex = 11;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -180,7 +191,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// mainMenuToolStripMenuItem
@@ -191,7 +202,7 @@ namespace Diploma {
 			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
 			this->mainMenuToolStripMenuItem->Text = L"Main";
 			this->mainMenuToolStripMenuItem->Click += gcnew System::EventHandler(this, &ConversionForm::mainMenuToolStripMenuItem_Click);
 			// 
@@ -243,55 +254,57 @@ namespace Diploma {
 			this->panel2->Size = System::Drawing::Size(5, 414);
 			this->panel2->TabIndex = 50;
 			// 
-			// jMetroTextBox2
+			// —urrencyNumber2
 			// 
-			this->jMetroTextBox2->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox2->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox2->BorderRadius = 20;
-			this->jMetroTextBox2->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox2->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox2->IsPassword = false;
-			this->jMetroTextBox2->LineThickness = 2;
-			this->jMetroTextBox2->Location = System::Drawing::Point(71, 336);
-			this->jMetroTextBox2->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox2->MaxLength = 32767;
-			this->jMetroTextBox2->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox2->Name = L"jMetroTextBox2";
-			this->jMetroTextBox2->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox2->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox2->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox2->ReadOnly = false;
-			this->jMetroTextBox2->Size = System::Drawing::Size(218, 51);
-			this->jMetroTextBox2->TabIndex = 58;
-			this->jMetroTextBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox2->TextName = L"1";
+			this->—urrencyNumber2->BackColor = System::Drawing::Color::Transparent;
+			this->—urrencyNumber2->BorderColor = System::Drawing::Color::Empty;
+			this->—urrencyNumber2->BorderRadius = 20;
+			this->—urrencyNumber2->Enabled = false;
+			this->—urrencyNumber2->FillColor = System::Drawing::SystemColors::Window;
+			this->—urrencyNumber2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->—urrencyNumber2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->—urrencyNumber2->ForeColors = System::Drawing::Color::Gray;
+			this->—urrencyNumber2->IsPassword = false;
+			this->—urrencyNumber2->LineThickness = 2;
+			this->—urrencyNumber2->Location = System::Drawing::Point(71, 336);
+			this->—urrencyNumber2->Margin = System::Windows::Forms::Padding(4);
+			this->—urrencyNumber2->MaxLength = 32767;
+			this->—urrencyNumber2->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->—urrencyNumber2->Name = L"—urrencyNumber2";
+			this->—urrencyNumber2->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->—urrencyNumber2->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->—urrencyNumber2->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->—urrencyNumber2->ReadOnly = false;
+			this->—urrencyNumber2->Size = System::Drawing::Size(218, 51);
+			this->—urrencyNumber2->TabIndex = 58;
+			this->—urrencyNumber2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->—urrencyNumber2->TextName = L"1";
 			// 
-			// jMetroTextBox1
+			// —urrencyNumber1
 			// 
-			this->jMetroTextBox1->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox1->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox1->BorderRadius = 20;
-			this->jMetroTextBox1->FillColor = System::Drawing::SystemColors::Window;
-			this->jMetroTextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox1->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox1->IsPassword = false;
-			this->jMetroTextBox1->LineThickness = 2;
-			this->jMetroTextBox1->Location = System::Drawing::Point(71, 242);
-			this->jMetroTextBox1->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox1->MaxLength = 32767;
-			this->jMetroTextBox1->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox1->Name = L"jMetroTextBox1";
-			this->jMetroTextBox1->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox1->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox1->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox1->ReadOnly = false;
-			this->jMetroTextBox1->Size = System::Drawing::Size(218, 51);
-			this->jMetroTextBox1->TabIndex = 57;
-			this->jMetroTextBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox1->TextName = L"1";
+			this->—urrencyNumber1->BackColor = System::Drawing::Color::Transparent;
+			this->—urrencyNumber1->BorderColor = System::Drawing::Color::Empty;
+			this->—urrencyNumber1->BorderRadius = 20;
+			this->—urrencyNumber1->FillColor = System::Drawing::SystemColors::Window;
+			this->—urrencyNumber1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->—urrencyNumber1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->—urrencyNumber1->ForeColors = System::Drawing::Color::Gray;
+			this->—urrencyNumber1->IsPassword = false;
+			this->—urrencyNumber1->LineThickness = 2;
+			this->—urrencyNumber1->Location = System::Drawing::Point(71, 242);
+			this->—urrencyNumber1->Margin = System::Windows::Forms::Padding(4);
+			this->—urrencyNumber1->MaxLength = 32767;
+			this->—urrencyNumber1->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->—urrencyNumber1->Name = L"—urrencyNumber1";
+			this->—urrencyNumber1->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->—urrencyNumber1->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->—urrencyNumber1->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->—urrencyNumber1->ReadOnly = false;
+			this->—urrencyNumber1->Size = System::Drawing::Size(218, 51);
+			this->—urrencyNumber1->TabIndex = 57;
+			this->—urrencyNumber1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->—urrencyNumber1->TextName = L"1";
+			this->—urrencyNumber1->Load += gcnew System::EventHandler(this, &ConversionForm::jMetroTextBox1_Load);
 			// 
 			// label1
 			// 
@@ -304,31 +317,25 @@ namespace Diploma {
 			this->label1->TabIndex = 56;
 			this->label1->Text = L"¬‚Â‰≥Ú¸ ÒÛÏÛ ÍÓÌ‚ÂÚ‡ˆ≥ø";
 			// 
-			// listBox1
+			// CurrencyBox1
 			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
-				L"UAH", L"USD", L"EUR", L"GBP", L"RUB", L"JPY",
-					L"CNY"
-			});
-			this->listBox1->Location = System::Drawing::Point(120, 301);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(120, 20);
-			this->listBox1->TabIndex = 59;
+			this->CurrencyBox1->FormattingEnabled = true;
+			this->CurrencyBox1->ItemHeight = 16;
+			this->CurrencyBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"UAH", L"USD", L"EUR", L"GBP", L"RUB" });
+			this->CurrencyBox1->Location = System::Drawing::Point(120, 301);
+			this->CurrencyBox1->Name = L"CurrencyBox1";
+			this->CurrencyBox1->Size = System::Drawing::Size(120, 20);
+			this->CurrencyBox1->TabIndex = 59;
 			// 
-			// listBox2
+			// CurrencyBox2
 			// 
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 16;
-			this->listBox2->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
-				L"UAH", L"USD", L"EUR", L"GBP", L"RUB", L"JPY",
-					L"CNY"
-			});
-			this->listBox2->Location = System::Drawing::Point(120, 397);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(120, 20);
-			this->listBox2->TabIndex = 60;
+			this->CurrencyBox2->FormattingEnabled = true;
+			this->CurrencyBox2->ItemHeight = 16;
+			this->CurrencyBox2->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"UAH", L"USD", L"EUR", L"GBP", L"RUB" });
+			this->CurrencyBox2->Location = System::Drawing::Point(120, 397);
+			this->CurrencyBox2->Name = L"CurrencyBox2";
+			this->CurrencyBox2->Size = System::Drawing::Size(120, 20);
+			this->CurrencyBox2->TabIndex = 60;
 			// 
 			// label4
 			// 
@@ -648,57 +655,57 @@ namespace Diploma {
 			this->jMetroTextBox10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->jMetroTextBox10->TextName = L"6,75";
 			// 
-			// jThinButton7
+			// CalculateButton
 			// 
-			this->jThinButton7->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton7->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->CalculateButton->BackColor = System::Drawing::Color::Transparent;
+			this->CalculateButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(28)), static_cast<System::Int32>(static_cast<System::Byte>(37)));
-			this->jThinButton7->BorderColor = System::Drawing::Color::White;
-			this->jThinButton7->BorderRadius = 23;
-			this->jThinButton7->ButtonText = L"–ÓÁ‡ıÛ‚‡ÚË";
-			this->jThinButton7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CalculateButton->BorderColor = System::Drawing::Color::White;
+			this->CalculateButton->BorderRadius = 23;
+			this->CalculateButton->ButtonText = L"–ÓÁ‡ıÛ‚‡ÚË";
+			this->CalculateButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton7->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CalculateButton->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton7->ForeColors = System::Drawing::SystemColors::ControlLight;
-			this->jThinButton7->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->CalculateButton->ForeColors = System::Drawing::SystemColors::ControlLight;
+			this->CalculateButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton7->LineThickness = 2;
-			this->jThinButton7->Location = System::Drawing::Point(71, 468);
-			this->jThinButton7->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
-			this->jThinButton7->Name = L"jThinButton7";
-			this->jThinButton7->Size = System::Drawing::Size(218, 51);
-			this->jThinButton7->TabIndex = 79;
-			this->jThinButton7->Click += gcnew System::EventHandler(this, &ConversionForm::jThinButton7_Click);
+			this->CalculateButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->CalculateButton->HoverFontColor = System::Drawing::Color::White;
+			this->CalculateButton->LineThickness = 2;
+			this->CalculateButton->Location = System::Drawing::Point(71, 468);
+			this->CalculateButton->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->CalculateButton->Name = L"CalculateButton";
+			this->CalculateButton->Size = System::Drawing::Size(218, 51);
+			this->CalculateButton->TabIndex = 79;
+			this->CalculateButton->Click += gcnew System::EventHandler(this, &ConversionForm::CalculateButton_Click);
 			// 
-			// jThinButton1
+			// AdditionallyButton
 			// 
-			this->jThinButton1->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->AdditionallyButton->BackColor = System::Drawing::Color::Transparent;
+			this->AdditionallyButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(28)), static_cast<System::Int32>(static_cast<System::Byte>(37)));
-			this->jThinButton1->BorderColor = System::Drawing::Color::White;
-			this->jThinButton1->BorderRadius = 23;
-			this->jThinButton1->ButtonText = L"ƒÓ‰‡ÚÍÓ‚Ó";
-			this->jThinButton1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->AdditionallyButton->BorderColor = System::Drawing::Color::White;
+			this->AdditionallyButton->BorderRadius = 23;
+			this->AdditionallyButton->ButtonText = L"ƒÓ‰‡ÚÍÓ‚Ó";
+			this->AdditionallyButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->AdditionallyButton->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton1->ForeColors = System::Drawing::SystemColors::ControlLight;
-			this->jThinButton1->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->AdditionallyButton->ForeColors = System::Drawing::SystemColors::ControlLight;
+			this->AdditionallyButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton1->LineThickness = 2;
-			this->jThinButton1->Location = System::Drawing::Point(420, 468);
-			this->jThinButton1->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
-			this->jThinButton1->Name = L"jThinButton1";
-			this->jThinButton1->Size = System::Drawing::Size(218, 51);
-			this->jThinButton1->TabIndex = 80;
-			this->jThinButton1->Click += gcnew System::EventHandler(this, &ConversionForm::jThinButton1_Click);
+			this->AdditionallyButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->AdditionallyButton->HoverFontColor = System::Drawing::Color::White;
+			this->AdditionallyButton->LineThickness = 2;
+			this->AdditionallyButton->Location = System::Drawing::Point(420, 468);
+			this->AdditionallyButton->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->AdditionallyButton->Name = L"AdditionallyButton";
+			this->AdditionallyButton->Size = System::Drawing::Size(218, 51);
+			this->AdditionallyButton->TabIndex = 80;
+			this->AdditionallyButton->Click += gcnew System::EventHandler(this, &ConversionForm::AdditionallyButton_Click);
 			// 
 			// jDragControl1
 			// 
@@ -710,8 +717,8 @@ namespace Diploma {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(700, 584);
-			this->Controls->Add(this->jThinButton1);
-			this->Controls->Add(this->jThinButton7);
+			this->Controls->Add(this->AdditionallyButton);
+			this->Controls->Add(this->CalculateButton);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->jMetroTextBox9);
@@ -730,10 +737,10 @@ namespace Diploma {
 			this->Controls->Add(this->jMetroTextBox3);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->listBox2);
-			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->jMetroTextBox2);
-			this->Controls->Add(this->jMetroTextBox1);
+			this->Controls->Add(this->CurrencyBox2);
+			this->Controls->Add(this->CurrencyBox1);
+			this->Controls->Add(this->—urrencyNumber2);
+			this->Controls->Add(this->—urrencyNumber1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
@@ -747,20 +754,75 @@ namespace Diploma {
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
+	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void jThinButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	EndForm^ _EndForm6 = gcnew EndForm();
-	_EndForm6->ShowDialog();
-}
-};
+	private: System::Void jMetroTextBox1_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void CalculateButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		double array[20] = { 0.0374,0.0332,0.0297,2.6062,   26.755,0.8884,0.7971,69.87,   30.1021,1.1256,0.8977,78.4449,   33.6604,1.2545,1.1145,87.4076,   0.3837,0.0143,0.0127,0.0114 };
+
+		double CNC = Convert::ToDouble(—urrencyNumber1->TextName);
+
+		if (CurrencyBox1->SelectedItem == CurrencyBox2->SelectedItem)
+		{
+			MessageBox::Show("Please Input different currancy");
+		}
+		if (CNC <= 0 || CNC > 1000000)
+		{
+			MessageBox::Show("Please Input number between 1 and 1000000");
+		}
+		else
+		{
+			if (CurrencyBox1->SelectedItem == "UAH" && CurrencyBox2->SelectedItem == "USD")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[0]);
+			if (CurrencyBox1->SelectedItem == "UAH" && CurrencyBox2->SelectedItem == "EUR")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[1]);
+			if (CurrencyBox1->SelectedItem == "UAH" && CurrencyBox2->SelectedItem == "GBP")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[2]);
+			if (CurrencyBox1->SelectedItem == "UAH" && CurrencyBox2->SelectedItem == "RUB")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[3]);
+			if (CurrencyBox1->SelectedItem == "USD" && CurrencyBox2->SelectedItem == "UAH")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[4]);
+			if (CurrencyBox1->SelectedItem == "USD" && CurrencyBox2->SelectedItem == "EUR")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[5]);
+			if (CurrencyBox1->SelectedItem == "USD" && CurrencyBox2->SelectedItem == "GBP")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[6]);
+			if (CurrencyBox1->SelectedItem == "USD" && CurrencyBox2->SelectedItem == "RUB")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[7]);
+			if (CurrencyBox1->SelectedItem == "EUR" && CurrencyBox2->SelectedItem == "UAH")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[8]);
+			if (CurrencyBox1->SelectedItem == "EUR" && CurrencyBox2->SelectedItem == "USD")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[9]);
+			if (CurrencyBox1->SelectedItem == "EUR" && CurrencyBox2->SelectedItem == "GBP")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[10]);
+			if (CurrencyBox1->SelectedItem == "EUR" && CurrencyBox2->SelectedItem == "RUB")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[11]);
+			if (CurrencyBox1->SelectedItem == "GBP" && CurrencyBox2->SelectedItem == "UAH")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[12]);
+			if (CurrencyBox1->SelectedItem == "GBP" && CurrencyBox2->SelectedItem == "USD")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[13]);
+			if (CurrencyBox1->SelectedItem == "GBP" && CurrencyBox2->SelectedItem == "EUR")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[14]);
+			if (CurrencyBox1->SelectedItem == "GBP" && CurrencyBox2->SelectedItem == "RUB")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[15]);
+			if (CurrencyBox1->SelectedItem == "RUB" && CurrencyBox2->SelectedItem == "UAH")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[16]);
+			if (CurrencyBox1->SelectedItem == "RUB" && CurrencyBox2->SelectedItem == "USD")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[17]);
+			if (CurrencyBox1->SelectedItem == "RUB" && CurrencyBox2->SelectedItem == "EUR")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[18]);
+			if (CurrencyBox1->SelectedItem == "RUB" && CurrencyBox2->SelectedItem == "GBP")
+				—urrencyNumber2->TextName = Convert::ToString(CNC * array[19]);
+		}
+	}
+	private: System::Void AdditionallyButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show(" ‘ÛÌÚ ÒÚÂÎ≥Ì„≥‚ - GBP - 32,40 / 34,00\n ÿ‚ÂÈˆ‡Ò¸ÍËÈ Ù‡ÌÍ - CHF - 27,00/ 28,40\n «ÓÎÓÚÓ - 1 385,42 /1 629,71\n œ‡Î‡‰≥È - 1 360,00 / 1 860,00\n œÎ‡ÚËÌ‡ - 670,00 / 972,71 \n —≥·ÎÓ - 14,45 / 21,77");
+	}
+	};
 }
