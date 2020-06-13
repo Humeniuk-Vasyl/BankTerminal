@@ -129,9 +129,30 @@ public: void DataSelect(ParametersClass^ n) {
 		while (reader->Read()) {
 			n->UserName = (reader["UserName"]->ToString());
 			n->PhoneNumber = (reader["PhoneNumber"]->ToString());
-			n->Balance =(reader["Balanse"]->ToString());
-			n->Deposit =(reader["Deposit"]->ToString());
+			n->Balance = (reader["Balanse"]->ToString());
+			n->Deposit = (reader["Deposit"]->ToString());
 		}
+	}
+	finally {
+		if (conn != nullptr)
+		{
+			conn->Close();
+		}
+		// Completed
+	}
+}
+public: void UpdateBalance(ParametersClass^ n, int SummTxt) {
+	try {
+		// Connection to DB
+		ConnectToDB();
+		int StartSummBalance = Convert::ToInt32(n->Balance);
+		StartSummBalance += SummTxt;
+		String^ FinishSummBalance = Convert::ToString(StartSummBalance);
+		String^ cmdText2 = "Update dbo.Clients SET Balanse = @Balanse Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
+		SqlCommand^ cmd2 = gcnew SqlCommand(cmdText2, conn);
+		cmd2->Parameters->AddWithValue("@Balanse", FinishSummBalance);
+		conn->Open();
+		cmd2->ExecuteNonQuery();
 	}
 	finally {
 		if (conn != nullptr)
