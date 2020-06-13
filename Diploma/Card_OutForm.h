@@ -1,6 +1,7 @@
 #pragma once
 #include <stdlib.h>
 #include "EndForm.h"
+#include "ParametersClass.h"
 namespace Diploma {
 
 	using namespace System;
@@ -57,8 +58,10 @@ namespace Diploma {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox4;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox3;
+	private: ::JMetroTextBox::JMetroTextBox^ CardNumberTxt;
+	private: ::JMetroTextBox::JMetroTextBox^ UserNameTxt;
+
+
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox2;
 	private: ::JDragControl::JDragControl^ jDragControl1;
 	private: System::ComponentModel::IContainer^ components;
@@ -99,8 +102,8 @@ namespace Diploma {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->jMetroTextBox4 = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jMetroTextBox3 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->CardNumberTxt = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->UserNameTxt = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->jMetroTextBox2 = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->menuStrip1->SuspendLayout();
@@ -436,57 +439,57 @@ namespace Diploma {
 			this->label4->TabIndex = 39;
 			this->label4->Text = L"Максимальна сума видачі";
 			// 
-			// jMetroTextBox4
+			// CardNumberTxt
 			// 
-			this->jMetroTextBox4->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox4->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox4->BorderRadius = 10;
-			this->jMetroTextBox4->Enabled = false;
-			this->jMetroTextBox4->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox4->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox4->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox4->IsPassword = false;
-			this->jMetroTextBox4->LineThickness = 2;
-			this->jMetroTextBox4->Location = System::Drawing::Point(124, 447);
-			this->jMetroTextBox4->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox4->MaxLength = 32767;
-			this->jMetroTextBox4->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox4->Name = L"jMetroTextBox4";
-			this->jMetroTextBox4->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox4->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox4->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox4->ReadOnly = false;
-			this->jMetroTextBox4->Size = System::Drawing::Size(218, 48);
-			this->jMetroTextBox4->TabIndex = 44;
-			this->jMetroTextBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox4->TextName = L"****";
+			this->CardNumberTxt->BackColor = System::Drawing::Color::Transparent;
+			this->CardNumberTxt->BorderColor = System::Drawing::Color::Empty;
+			this->CardNumberTxt->BorderRadius = 10;
+			this->CardNumberTxt->Enabled = false;
+			this->CardNumberTxt->FillColor = System::Drawing::Color::White;
+			this->CardNumberTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->CardNumberTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->CardNumberTxt->ForeColors = System::Drawing::Color::Gray;
+			this->CardNumberTxt->IsPassword = false;
+			this->CardNumberTxt->LineThickness = 2;
+			this->CardNumberTxt->Location = System::Drawing::Point(124, 447);
+			this->CardNumberTxt->Margin = System::Windows::Forms::Padding(4);
+			this->CardNumberTxt->MaxLength = 32767;
+			this->CardNumberTxt->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->CardNumberTxt->Name = L"CardNumberTxt";
+			this->CardNumberTxt->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->CardNumberTxt->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->CardNumberTxt->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->CardNumberTxt->ReadOnly = false;
+			this->CardNumberTxt->Size = System::Drawing::Size(218, 48);
+			this->CardNumberTxt->TabIndex = 44;
+			this->CardNumberTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->CardNumberTxt->TextName = L"****";
 			// 
-			// jMetroTextBox3
+			// UserNameTxt
 			// 
-			this->jMetroTextBox3->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox3->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox3->BorderRadius = 10;
-			this->jMetroTextBox3->Enabled = false;
-			this->jMetroTextBox3->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox3->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox3->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox3->IsPassword = false;
-			this->jMetroTextBox3->LineThickness = 2;
-			this->jMetroTextBox3->Location = System::Drawing::Point(124, 400);
-			this->jMetroTextBox3->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox3->MaxLength = 32767;
-			this->jMetroTextBox3->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox3->Name = L"jMetroTextBox3";
-			this->jMetroTextBox3->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox3->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox3->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox3->ReadOnly = false;
-			this->jMetroTextBox3->Size = System::Drawing::Size(218, 48);
-			this->jMetroTextBox3->TabIndex = 43;
-			this->jMetroTextBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox3->TextName = L"Name";
+			this->UserNameTxt->BackColor = System::Drawing::Color::Transparent;
+			this->UserNameTxt->BorderColor = System::Drawing::Color::Empty;
+			this->UserNameTxt->BorderRadius = 10;
+			this->UserNameTxt->Enabled = false;
+			this->UserNameTxt->FillColor = System::Drawing::Color::White;
+			this->UserNameTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->UserNameTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->UserNameTxt->ForeColors = System::Drawing::Color::Gray;
+			this->UserNameTxt->IsPassword = false;
+			this->UserNameTxt->LineThickness = 2;
+			this->UserNameTxt->Location = System::Drawing::Point(124, 400);
+			this->UserNameTxt->Margin = System::Windows::Forms::Padding(4);
+			this->UserNameTxt->MaxLength = 32767;
+			this->UserNameTxt->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->UserNameTxt->Name = L"UserNameTxt";
+			this->UserNameTxt->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->UserNameTxt->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->UserNameTxt->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->UserNameTxt->ReadOnly = false;
+			this->UserNameTxt->Size = System::Drawing::Size(218, 48);
+			this->UserNameTxt->TabIndex = 43;
+			this->UserNameTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->UserNameTxt->TextName = L"Name";
 			// 
 			// jMetroTextBox2
 			// 
@@ -524,8 +527,8 @@ namespace Diploma {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(700, 550);
-			this->Controls->Add(this->jMetroTextBox4);
-			this->Controls->Add(this->jMetroTextBox3);
+			this->Controls->Add(this->CardNumberTxt);
+			this->Controls->Add(this->UserNameTxt);
 			this->Controls->Add(this->jMetroTextBox2);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
@@ -562,8 +565,10 @@ namespace Diploma {
 	}
 
 private: System::Void Card_OutForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	Pen^ DarkPen = gcnew Pen(Color::DarkSlateGray, 4.0f);
-
+	
+	ParametersClass^ n = gcnew ParametersClass();
+	CardNumberTxt->TextName = Convert::ToString(n->CardNumber);
+	UserNameTxt->TextName = Convert::ToString(n->UserName);
 }
 private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();

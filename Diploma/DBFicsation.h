@@ -48,6 +48,7 @@ public: void Insert(String^ CardNumber, String^ PIN_Code, String^ UserName, Stri
 		cmd->Parameters->AddWithValue("@PhoneNumber", PhoneNumber);
 		conn->Open();
 		cmd->ExecuteNonQuery();
+
 	}
 	finally {
 		if (conn != nullptr)
@@ -85,7 +86,6 @@ public: void Insert(String^ CardNumber, String^ PIN_Code, String^ UserName) {
 
 	  //Log_In_Submit function
 public: void Log_In_Submit(ParametersClass^ n) {
-
 	try {
 		// Connection to DB
 		ConnectToDB();
@@ -117,7 +117,29 @@ public: void Log_In_Submit(ParametersClass^ n) {
 		}
 		// Completed
 	}
-
 }
-};
+public: void DataSelect(ParametersClass^ n) {
+	try {
+		// Connection to DB
+		ConnectToDB();
+		String^ cmdText2 = "SELECT * FROM dbo.Clients Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
+		SqlCommand^ cmd2 = gcnew SqlCommand(cmdText2, conn);
+		conn->Open();
+		SqlDataReader^ reader = cmd2->ExecuteReader();
+		while (reader->Read()) {
+			n->UserName = (reader["UserName"]->ToString());
+			n->PhoneNumber = (reader["PhoneNumber"]->ToString());
+			n->Balance =(reader["Balanse"]->ToString());
+			n->Deposit =(reader["Deposit"]->ToString());
+		}
+	}
+	finally {
+		if (conn != nullptr)
+		{
+			conn->Close();
+		}
+		// Completed
+	}
+}
 
+};

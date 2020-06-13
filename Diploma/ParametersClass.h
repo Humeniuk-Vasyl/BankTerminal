@@ -29,5 +29,41 @@ public:
 			pIN_code = value;
 		}
 	}
+	static String^ userName;
+	static property String^ UserName {
+		String^ get() {
+			return userName;
+		}
+		void set(String^ value) {
+			userName = value;
+		}
+	}
+	static String^ phoneNumber;
+	static property String^ PhoneNumber {
+		String^ get() {
+			return phoneNumber;
+		}
+		void set(String^ value) {
+			phoneNumber = value;
+		}
+	}
+	static String^ balance;
+	static property String^ Balance {
+		String^ get() {
+			return balance;
+		}
+		void set(String^ value) {
+			balance = value;
+		}
+	}
+	static String^ deposit;
+	static property String^ Deposit {
+		String^ get() {
+			return deposit;
+		}
+		void set(String^ value) {
+			deposit = value;
+		}
+	}
 };
 

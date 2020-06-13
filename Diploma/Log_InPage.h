@@ -356,7 +356,7 @@ namespace Diploma {
 				// Connection to DB
 				// Creation the connect to DB
 		// Data Source=ðîìàí-ïê\sqlexpress;Initial Catalog=ClientsDB;Integrated Security=True
-				
+
 				connStringBuilder = gcnew SqlConnectionStringBuilder();
 				connStringBuilder->DataSource = "ðîìàí-ïê\\sqlexpress";
 				connStringBuilder->InitialCatalog = "ClientsDB";
@@ -373,10 +373,12 @@ namespace Diploma {
 				SqlDataAdapter^ sda = gcnew SqlDataAdapter(cmdText, conn);
 				DataTable^ dtbl = gcnew DataTable();
 				sda->Fill(dtbl);
-
 				cmd->ExecuteNonQuery();
+				
 				if (dtbl->Rows->Count == 1)
 				{
+					ParametersClass^ n1 = gcnew ParametersClass();
+					DBF1.DataSelect(n1);
 					//MessageBox::Show("login successful!");
 					//goiòg to next page
 					this->Hide();
@@ -386,6 +388,7 @@ namespace Diploma {
 				}
 				else
 				{
+					
 					MessageBox::Show("Check your card number and PIN-code");
 				}
 			}
@@ -393,13 +396,11 @@ namespace Diploma {
 				if (conn != nullptr)
 				{
 					conn->Close();
+
 				}
 				// Completed
 			}
-
-
 		};
-
 	}
 	};
 }
