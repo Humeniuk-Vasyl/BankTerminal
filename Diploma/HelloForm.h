@@ -1,6 +1,7 @@
 #pragma once
 #include "Log_InPage.h"
 #include "Sign_InPage.h"
+#include <stdlib.h>
 namespace Diploma {
 
 	using namespace System;
@@ -39,16 +40,18 @@ namespace Diploma {
 	protected:
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ fileToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ mainMenuToolStripMenuItem;
+
 
 	private: System::Windows::Forms::ToolStripMenuItem^ exitToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
+	private: ::JThinButton::JThinButton^ Log_InFormButton;
 
 
 
-	private: ::JThinButton::JThinButton^ jThinButton1;
 
-	private: ::JThinButton::JThinButton^ jThinButton2;
+	private: ::JThinButton::JThinButton^ Sign_InFormButton;
+
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
@@ -80,11 +83,10 @@ namespace Diploma {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(HelloForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->mainMenuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->jThinButton1 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton2 = (gcnew ::JThinButton::JThinButton());
+			this->Log_InFormButton = (gcnew ::JThinButton::JThinButton());
+			this->Sign_InFormButton = (gcnew ::JThinButton::JThinButton());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -114,27 +116,13 @@ namespace Diploma {
 			// 
 			this->fileToolStripMenuItem->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->mainMenuToolStripMenuItem,
-					this->exitToolStripMenuItem
-			});
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->exitToolStripMenuItem });
 			this->fileToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
 			this->fileToolStripMenuItem->Text = L"Actions";
-			// 
-			// mainMenuToolStripMenuItem
-			// 
-			this->mainMenuToolStripMenuItem->BackColor = System::Drawing::Color::White;
-			this->mainMenuToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
-			this->mainMenuToolStripMenuItem->Text = L"Main";
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -144,8 +132,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &HelloForm::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -157,60 +146,58 @@ namespace Diploma {
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
 			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
 			this->aboutToolStripMenuItem->Text = L"About";
+			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &HelloForm::aboutToolStripMenuItem_Click);
 			// 
-			// jThinButton1
+			// Log_InFormButton
 			// 
-			this->jThinButton1->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->Log_InFormButton->BackColor = System::Drawing::Color::Transparent;
+			this->Log_InFormButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->BorderColor = System::Drawing::Color::White;
-			this->jThinButton1->BorderRadius = 40;
-			this->jThinButton1->ButtonText = L" Log In";
-			this->jThinButton1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Log_InFormButton->BorderColor = System::Drawing::Color::White;
+			this->Log_InFormButton->BorderRadius = 40;
+			this->Log_InFormButton->ButtonText = L" Log In";
+			this->Log_InFormButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Log_InFormButton->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton1->ForeColors = System::Drawing::Color::Snow;
-			this->jThinButton1->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->Log_InFormButton->ForeColors = System::Drawing::Color::Snow;
+			this->Log_InFormButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton1->LineThickness = 2;
-			this->jThinButton1->Location = System::Drawing::Point(156, 191);
-			this->jThinButton1->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton1->Name = L"jThinButton1";
-			this->jThinButton1->Size = System::Drawing::Size(225, 85);
-			this->jThinButton1->TabIndex = 5;
-			this->jThinButton1->Click += gcnew System::EventHandler(this, &HelloForm::jThinButton1_Click);
+			this->Log_InFormButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->Log_InFormButton->HoverFontColor = System::Drawing::Color::White;
+			this->Log_InFormButton->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Log_InFormButton->LineThickness = 2;
+			this->Log_InFormButton->Location = System::Drawing::Point(156, 191);
+			this->Log_InFormButton->Margin = System::Windows::Forms::Padding(4);
+			this->Log_InFormButton->Name = L"Log_InFormButton";
+			this->Log_InFormButton->Size = System::Drawing::Size(225, 85);
+			this->Log_InFormButton->TabIndex = 5;
+			this->Log_InFormButton->Click += gcnew System::EventHandler(this, &HelloForm::Log_InFormButton1_Click);
 			// 
-			// jThinButton2
+			// Sign_InFormButton
 			// 
-			this->jThinButton2->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton2->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->BorderColor = System::Drawing::Color::White;
-			this->jThinButton2->BorderRadius = 40;
-			this->jThinButton2->ButtonText = L"Sign In";
-			this->jThinButton2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Sign_InFormButton->BackColor = System::Drawing::Color::Transparent;
+			this->Sign_InFormButton->BackgroundColor = System::Drawing::Color::Crimson;
+			this->Sign_InFormButton->BorderColor = System::Drawing::Color::White;
+			this->Sign_InFormButton->BorderRadius = 40;
+			this->Sign_InFormButton->ButtonText = L"Sign In";
+			this->Sign_InFormButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->jThinButton2->ForeColors = System::Drawing::Color::Snow;
-			this->jThinButton2->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton2->LineThickness = 2;
-			this->jThinButton2->Location = System::Drawing::Point(157, 284);
-			this->jThinButton2->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton2->Name = L"jThinButton2";
-			this->jThinButton2->Size = System::Drawing::Size(224, 83);
-			this->jThinButton2->TabIndex = 7;
-			this->jThinButton2->Click += gcnew System::EventHandler(this, &HelloForm::jThinButton2_Click);
+			this->Sign_InFormButton->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Sign_InFormButton->ForeColors = System::Drawing::Color::Snow;
+			this->Sign_InFormButton->HoverBackground = System::Drawing::Color::Crimson;
+			this->Sign_InFormButton->HoverBorder = System::Drawing::Color::Crimson;
+			this->Sign_InFormButton->HoverFontColor = System::Drawing::Color::White;
+			this->Sign_InFormButton->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Sign_InFormButton->LineThickness = 2;
+			this->Sign_InFormButton->Location = System::Drawing::Point(157, 284);
+			this->Sign_InFormButton->Margin = System::Windows::Forms::Padding(4);
+			this->Sign_InFormButton->Name = L"Sign_InFormButton";
+			this->Sign_InFormButton->Size = System::Drawing::Size(224, 83);
+			this->Sign_InFormButton->TabIndex = 7;
+			this->Sign_InFormButton->Click += gcnew System::EventHandler(this, &HelloForm::Sign_InFormButton_Click);
 			// 
 			// label3
 			// 
@@ -288,8 +275,8 @@ namespace Diploma {
 			this->ClientSize = System::Drawing::Size(532, 424);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->jThinButton2);
-			this->Controls->Add(this->jThinButton1);
+			this->Controls->Add(this->Sign_InFormButton);
+			this->Controls->Add(this->Log_InFormButton);
 			this->Controls->Add(this->menuStrip1);
 			this->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -313,24 +300,31 @@ namespace Diploma {
 		simpleSound->Play();
 	}
 	private: System::Void jThinButton1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
+	private: System::Void Sign_InFormButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		Sign_InPage^ _SignInPage1 = gcnew Sign_InPage();
+		_SignInPage1->Show();
+	}
+	private: System::Void Log_InFormButton1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		Log_InPage^ _LogInPage1 = gcnew Log_InPage();
 		_LogInPage1->Show();
 	}
-	private: System::Void jThinButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		Sign_InPage^ _SignInPage1 = gcnew Sign_InPage();
-		_SignInPage1->Show();
-	
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
 	}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	this->label3->ForeColor = System::Drawing::Color::Tomato;
-}
-private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	this->label3->ForeColor = System::Drawing::Color::Gainsboro;
-}
+	private: System::Void aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("This is the first form - Hello Form \n U can confirm your account or create a new one");
+	}
 };
 }
