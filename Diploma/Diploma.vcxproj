@@ -155,6 +155,7 @@
     <ClCompile Include="BalanceForm.cpp" />
     <ClCompile Include="Card_InForm.cpp" />
     <ClCompile Include="Card_OutForm.cpp" />
+    <ClCompile Include="ChangingForm.cpp" />
     <ClCompile Include="ConversionForm.cpp" />
     <ClCompile Include="DBFicsation.cpp" />
     <ClCompile Include="DepositForm.cpp" />
@@ -175,6 +176,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Card_OutForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChangingForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ConversionForm.h">

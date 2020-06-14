@@ -54,7 +54,8 @@ namespace Diploma {
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox3;
 	private: System::Windows::Forms::Label^ label6;
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox4;
-	private: ::JThinButton::JThinButton^ jThinButton2;
+	private: ::JThinButton::JThinButton^ Sign_InSubmit;
+
 	private: ::JDragControl::JDragControl^ jDragControl1;
 	private: ::JDragControl::JDragControl^ jDragControl2;
 	private: System::ComponentModel::IContainer^ components;
@@ -89,7 +90,7 @@ namespace Diploma {
 			this->jMetroTextBox3 = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->jMetroTextBox4 = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jThinButton2 = (gcnew ::JThinButton::JThinButton());
+			this->Sign_InSubmit = (gcnew ::JThinButton::JThinButton());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->jDragControl2 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->menuStrip1->SuspendLayout();
@@ -351,32 +352,32 @@ namespace Diploma {
 			this->jMetroTextBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->jMetroTextBox4->TextName = L"";
 			// 
-			// jThinButton2
+			// Sign_InSubmit
 			// 
-			this->jThinButton2->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton2->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->Sign_InSubmit->BackColor = System::Drawing::Color::Transparent;
+			this->Sign_InSubmit->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->BorderColor = System::Drawing::Color::White;
-			this->jThinButton2->BorderRadius = 40;
-			this->jThinButton2->ButtonText = L"Sign-In";
-			this->jThinButton2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Sign_InSubmit->BorderColor = System::Drawing::Color::White;
+			this->Sign_InSubmit->BorderRadius = 40;
+			this->Sign_InSubmit->ButtonText = L"Sign-In";
+			this->Sign_InSubmit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Sign_InSubmit->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton2->ForeColors = System::Drawing::Color::Snow;
-			this->jThinButton2->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->Sign_InSubmit->ForeColors = System::Drawing::Color::Snow;
+			this->Sign_InSubmit->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+			this->Sign_InSubmit->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton2->LineThickness = 2;
-			this->jThinButton2->Location = System::Drawing::Point(144, 480);
-			this->jThinButton2->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton2->Name = L"jThinButton2";
-			this->jThinButton2->Size = System::Drawing::Size(224, 83);
-			this->jThinButton2->TabIndex = 18;
-			this->jThinButton2->Click += gcnew System::EventHandler(this, &Sign_InPage::jThinButton2_Click);
+			this->Sign_InSubmit->HoverFontColor = System::Drawing::Color::White;
+			this->Sign_InSubmit->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Sign_InSubmit->LineThickness = 2;
+			this->Sign_InSubmit->Location = System::Drawing::Point(144, 480);
+			this->Sign_InSubmit->Margin = System::Windows::Forms::Padding(4);
+			this->Sign_InSubmit->Name = L"Sign_InSubmit";
+			this->Sign_InSubmit->Size = System::Drawing::Size(224, 83);
+			this->Sign_InSubmit->TabIndex = 18;
+			this->Sign_InSubmit->Click += gcnew System::EventHandler(this, &Sign_InPage::Sign_InSubmit_Click);
 			// 
 			// jDragControl1
 			// 
@@ -394,7 +395,7 @@ namespace Diploma {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(514, 582);
-			this->Controls->Add(this->jThinButton2);
+			this->Controls->Add(this->Sign_InSubmit);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->jMetroTextBox4);
 			this->Controls->Add(this->label5);
@@ -423,8 +424,13 @@ namespace Diploma {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
-	private: System::Void jThinButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
+	private: System::Void Sign_InSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((jMetroTextBox1->TextName == "") || (jMetroTextBox2->TextName == "") || (jMetroTextBox3->TextName == ""))
 		{
 			MessageBox::Show("Input data!");
@@ -445,13 +451,6 @@ namespace Diploma {
 			Log_InPage^ _LogInPage1 = gcnew Log_InPage();
 			_LogInPage1->Show();
 		}
-		
 	}
-	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		this->label3->ForeColor = System::Drawing::Color::Tomato;
-	}
-	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
-	}
-	};
+};
 }

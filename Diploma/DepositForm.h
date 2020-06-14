@@ -46,9 +46,12 @@ namespace Diploma {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label6;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox4;
+	private: ::JMetroTextBox::JMetroTextBox^ ClientCardNumber;
+
 	private: System::Windows::Forms::Label^ label4;
-	private: ::JMetroTextBox::JMetroTextBox^ SummNumber;
+	private: ::JMetroTextBox::JMetroTextBox^ DepositSumm;
+
+
 
 
 	private: ::JMetroTextBox::JMetroTextBox^ TermNumber;
@@ -57,12 +60,15 @@ namespace Diploma {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Label^ label5;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox3;
-	private: System::Windows::Forms::Label^ label7;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox5;
-	private: ::JThinButton::JThinButton^ jThinButton7;
+	private: ::JMetroTextBox::JMetroTextBox^ DepositMinSumm;
 
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox6;
+	private: System::Windows::Forms::Label^ label7;
+	private: ::JMetroTextBox::JMetroTextBox^ PercentageRate;
+
+	private: ::JThinButton::JThinButton^ jThinButton7;
+	private: ::JMetroTextBox::JMetroTextBox^ DepositMaxSumm;
+
+
 	private: System::Windows::Forms::Label^ label8;
 	private: ::JDragControl::JDragControl^ jDragControl1;
 	private: ::JThinButton::JThinButton^ MinusTerm;
@@ -99,18 +105,18 @@ namespace Diploma {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->jMetroTextBox4 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->ClientCardNumber = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->SummNumber = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->DepositSumm = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->TermNumber = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->jMetroTextBox3 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->DepositMinSumm = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->jMetroTextBox5 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->PercentageRate = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->jThinButton7 = (gcnew ::JThinButton::JThinButton());
-			this->jMetroTextBox6 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->DepositMaxSumm = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->PlusTerm = (gcnew ::JThinButton::JThinButton());
@@ -235,31 +241,31 @@ namespace Diploma {
 			this->label6->TabIndex = 48;
 			this->label6->Text = L"Номер картки";
 			// 
-			// jMetroTextBox4
+			// ClientCardNumber
 			// 
-			this->jMetroTextBox4->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox4->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox4->BorderRadius = 10;
-			this->jMetroTextBox4->Enabled = false;
-			this->jMetroTextBox4->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox4->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox4->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox4->IsPassword = false;
-			this->jMetroTextBox4->LineThickness = 2;
-			this->jMetroTextBox4->Location = System::Drawing::Point(152, 419);
-			this->jMetroTextBox4->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox4->MaxLength = 32767;
-			this->jMetroTextBox4->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox4->Name = L"jMetroTextBox4";
-			this->jMetroTextBox4->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox4->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox4->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox4->ReadOnly = false;
-			this->jMetroTextBox4->Size = System::Drawing::Size(188, 51);
-			this->jMetroTextBox4->TabIndex = 47;
-			this->jMetroTextBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox4->TextName = L"**** 5565";
+			this->ClientCardNumber->BackColor = System::Drawing::Color::Transparent;
+			this->ClientCardNumber->BorderColor = System::Drawing::Color::Empty;
+			this->ClientCardNumber->BorderRadius = 10;
+			this->ClientCardNumber->Enabled = false;
+			this->ClientCardNumber->FillColor = System::Drawing::Color::White;
+			this->ClientCardNumber->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->ClientCardNumber->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->ClientCardNumber->ForeColors = System::Drawing::Color::Gray;
+			this->ClientCardNumber->IsPassword = false;
+			this->ClientCardNumber->LineThickness = 2;
+			this->ClientCardNumber->Location = System::Drawing::Point(152, 419);
+			this->ClientCardNumber->Margin = System::Windows::Forms::Padding(4);
+			this->ClientCardNumber->MaxLength = 32767;
+			this->ClientCardNumber->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->ClientCardNumber->Name = L"ClientCardNumber";
+			this->ClientCardNumber->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->ClientCardNumber->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->ClientCardNumber->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->ClientCardNumber->ReadOnly = false;
+			this->ClientCardNumber->Size = System::Drawing::Size(188, 51);
+			this->ClientCardNumber->TabIndex = 47;
+			this->ClientCardNumber->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->ClientCardNumber->TextName = L"**** 5565";
 			// 
 			// label4
 			// 
@@ -272,30 +278,30 @@ namespace Diploma {
 			this->label4->TabIndex = 46;
 			this->label4->Text = L"Максимальна сума депозиту";
 			// 
-			// SummNumber
+			// DepositSumm
 			// 
-			this->SummNumber->BackColor = System::Drawing::Color::Transparent;
-			this->SummNumber->BorderColor = System::Drawing::SystemColors::Highlight;
-			this->SummNumber->BorderRadius = 20;
-			this->SummNumber->FillColor = System::Drawing::Color::White;
-			this->SummNumber->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->SummNumber->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->SummNumber->ForeColors = System::Drawing::Color::Gray;
-			this->SummNumber->IsPassword = false;
-			this->SummNumber->LineThickness = 2;
-			this->SummNumber->Location = System::Drawing::Point(421, 385);
-			this->SummNumber->Margin = System::Windows::Forms::Padding(4);
-			this->SummNumber->MaxLength = 32767;
-			this->SummNumber->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->SummNumber->Name = L"SummNumber";
-			this->SummNumber->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->SummNumber->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->SummNumber->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->SummNumber->ReadOnly = false;
-			this->SummNumber->Size = System::Drawing::Size(218, 51);
-			this->SummNumber->TabIndex = 45;
-			this->SummNumber->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->SummNumber->TextName = L"1000";
+			this->DepositSumm->BackColor = System::Drawing::Color::Transparent;
+			this->DepositSumm->BorderColor = System::Drawing::SystemColors::Highlight;
+			this->DepositSumm->BorderRadius = 20;
+			this->DepositSumm->FillColor = System::Drawing::Color::White;
+			this->DepositSumm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositSumm->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositSumm->ForeColors = System::Drawing::Color::Gray;
+			this->DepositSumm->IsPassword = false;
+			this->DepositSumm->LineThickness = 2;
+			this->DepositSumm->Location = System::Drawing::Point(421, 385);
+			this->DepositSumm->Margin = System::Windows::Forms::Padding(4);
+			this->DepositSumm->MaxLength = 32767;
+			this->DepositSumm->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->DepositSumm->Name = L"DepositSumm";
+			this->DepositSumm->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->DepositSumm->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->DepositSumm->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->DepositSumm->ReadOnly = false;
+			this->DepositSumm->Size = System::Drawing::Size(218, 51);
+			this->DepositSumm->TabIndex = 45;
+			this->DepositSumm->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->DepositSumm->TextName = L"1000";
 			// 
 			// TermNumber
 			// 
@@ -356,31 +362,31 @@ namespace Diploma {
 			this->label5->TabIndex = 51;
 			this->label5->Text = L"Мінімальна сума депозиту";
 			// 
-			// jMetroTextBox3
+			// DepositMinSumm
 			// 
-			this->jMetroTextBox3->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox3->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox3->BorderRadius = 10;
-			this->jMetroTextBox3->Enabled = false;
-			this->jMetroTextBox3->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox3->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox3->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox3->IsPassword = false;
-			this->jMetroTextBox3->LineThickness = 2;
-			this->jMetroTextBox3->Location = System::Drawing::Point(228, 300);
-			this->jMetroTextBox3->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox3->MaxLength = 32767;
-			this->jMetroTextBox3->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox3->Name = L"jMetroTextBox3";
-			this->jMetroTextBox3->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox3->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox3->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox3->ReadOnly = false;
-			this->jMetroTextBox3->Size = System::Drawing::Size(112, 51);
-			this->jMetroTextBox3->TabIndex = 50;
-			this->jMetroTextBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox3->TextName = L"1000";
+			this->DepositMinSumm->BackColor = System::Drawing::Color::Transparent;
+			this->DepositMinSumm->BorderColor = System::Drawing::Color::Empty;
+			this->DepositMinSumm->BorderRadius = 10;
+			this->DepositMinSumm->Enabled = false;
+			this->DepositMinSumm->FillColor = System::Drawing::Color::White;
+			this->DepositMinSumm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositMinSumm->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositMinSumm->ForeColors = System::Drawing::Color::Gray;
+			this->DepositMinSumm->IsPassword = false;
+			this->DepositMinSumm->LineThickness = 2;
+			this->DepositMinSumm->Location = System::Drawing::Point(228, 300);
+			this->DepositMinSumm->Margin = System::Windows::Forms::Padding(4);
+			this->DepositMinSumm->MaxLength = 32767;
+			this->DepositMinSumm->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->DepositMinSumm->Name = L"DepositMinSumm";
+			this->DepositMinSumm->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->DepositMinSumm->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->DepositMinSumm->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->DepositMinSumm->ReadOnly = false;
+			this->DepositMinSumm->Size = System::Drawing::Size(112, 51);
+			this->DepositMinSumm->TabIndex = 50;
+			this->DepositMinSumm->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->DepositMinSumm->TextName = L"1000";
 			// 
 			// label7
 			// 
@@ -393,31 +399,31 @@ namespace Diploma {
 			this->label7->TabIndex = 53;
 			this->label7->Text = L"Процентна ставка";
 			// 
-			// jMetroTextBox5
+			// PercentageRate
 			// 
-			this->jMetroTextBox5->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox5->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox5->BorderRadius = 10;
-			this->jMetroTextBox5->Enabled = false;
-			this->jMetroTextBox5->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox5->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox5->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox5->IsPassword = false;
-			this->jMetroTextBox5->LineThickness = 2;
-			this->jMetroTextBox5->Location = System::Drawing::Point(152, 360);
-			this->jMetroTextBox5->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox5->MaxLength = 32767;
-			this->jMetroTextBox5->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox5->Name = L"jMetroTextBox5";
-			this->jMetroTextBox5->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox5->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox5->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox5->ReadOnly = false;
-			this->jMetroTextBox5->Size = System::Drawing::Size(188, 51);
-			this->jMetroTextBox5->TabIndex = 52;
-			this->jMetroTextBox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox5->TextName = L"Name";
+			this->PercentageRate->BackColor = System::Drawing::Color::Transparent;
+			this->PercentageRate->BorderColor = System::Drawing::Color::Empty;
+			this->PercentageRate->BorderRadius = 10;
+			this->PercentageRate->Enabled = false;
+			this->PercentageRate->FillColor = System::Drawing::Color::White;
+			this->PercentageRate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->PercentageRate->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->PercentageRate->ForeColors = System::Drawing::Color::Gray;
+			this->PercentageRate->IsPassword = false;
+			this->PercentageRate->LineThickness = 2;
+			this->PercentageRate->Location = System::Drawing::Point(152, 360);
+			this->PercentageRate->Margin = System::Windows::Forms::Padding(4);
+			this->PercentageRate->MaxLength = 32767;
+			this->PercentageRate->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->PercentageRate->Name = L"PercentageRate";
+			this->PercentageRate->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->PercentageRate->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->PercentageRate->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->PercentageRate->ReadOnly = false;
+			this->PercentageRate->Size = System::Drawing::Size(188, 51);
+			this->PercentageRate->TabIndex = 52;
+			this->PercentageRate->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->PercentageRate->TextName = L"Name";
 			// 
 			// jThinButton7
 			// 
@@ -445,31 +451,31 @@ namespace Diploma {
 			this->jThinButton7->TabIndex = 54;
 			this->jThinButton7->Click += gcnew System::EventHandler(this, &DepositForm::jThinButton7_Click);
 			// 
-			// jMetroTextBox6
+			// DepositMaxSumm
 			// 
-			this->jMetroTextBox6->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox6->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox6->BorderRadius = 10;
-			this->jMetroTextBox6->Enabled = false;
-			this->jMetroTextBox6->FillColor = System::Drawing::SystemColors::Window;
-			this->jMetroTextBox6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox6->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox6->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox6->IsPassword = false;
-			this->jMetroTextBox6->LineThickness = 2;
-			this->jMetroTextBox6->Location = System::Drawing::Point(228, 241);
-			this->jMetroTextBox6->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox6->MaxLength = 32767;
-			this->jMetroTextBox6->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox6->Name = L"jMetroTextBox6";
-			this->jMetroTextBox6->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox6->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox6->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox6->ReadOnly = false;
-			this->jMetroTextBox6->Size = System::Drawing::Size(112, 51);
-			this->jMetroTextBox6->TabIndex = 56;
-			this->jMetroTextBox6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox6->TextName = L"20000";
+			this->DepositMaxSumm->BackColor = System::Drawing::Color::Transparent;
+			this->DepositMaxSumm->BorderColor = System::Drawing::Color::Empty;
+			this->DepositMaxSumm->BorderRadius = 10;
+			this->DepositMaxSumm->Enabled = false;
+			this->DepositMaxSumm->FillColor = System::Drawing::SystemColors::Window;
+			this->DepositMaxSumm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositMaxSumm->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositMaxSumm->ForeColors = System::Drawing::Color::Gray;
+			this->DepositMaxSumm->IsPassword = false;
+			this->DepositMaxSumm->LineThickness = 2;
+			this->DepositMaxSumm->Location = System::Drawing::Point(228, 241);
+			this->DepositMaxSumm->Margin = System::Windows::Forms::Padding(4);
+			this->DepositMaxSumm->MaxLength = 32767;
+			this->DepositMaxSumm->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->DepositMaxSumm->Name = L"DepositMaxSumm";
+			this->DepositMaxSumm->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->DepositMaxSumm->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->DepositMaxSumm->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->DepositMaxSumm->ReadOnly = false;
+			this->DepositMaxSumm->Size = System::Drawing::Size(112, 51);
+			this->DepositMaxSumm->TabIndex = 56;
+			this->DepositMaxSumm->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->DepositMaxSumm->TextName = L"20000";
 			// 
 			// label8
 			// 
@@ -540,18 +546,18 @@ namespace Diploma {
 			this->ClientSize = System::Drawing::Size(700, 584);
 			this->Controls->Add(this->MinusTerm);
 			this->Controls->Add(this->PlusTerm);
-			this->Controls->Add(this->jMetroTextBox6);
+			this->Controls->Add(this->DepositMaxSumm);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->jThinButton7);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->jMetroTextBox5);
+			this->Controls->Add(this->PercentageRate);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->jMetroTextBox3);
+			this->Controls->Add(this->DepositMinSumm);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->jMetroTextBox4);
+			this->Controls->Add(this->ClientCardNumber);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->SummNumber);
+			this->Controls->Add(this->DepositSumm);
 			this->Controls->Add(this->TermNumber);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
@@ -577,12 +583,12 @@ namespace Diploma {
 		this->Close();
 	}
 	private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
-		int summ1 = Convert::ToInt32(SummNumber->TextName);
+		int summ1 = Convert::ToInt32(DepositSumm->TextName);
 		if (summ1 < 100 || summ1> 20000 || summ1 % 100 != 0)
 		{
 			MessageBox::Show("Please input correct number");
 			summ1 = 1000;
-			SummNumber->TextName = Convert::ToString(summ1);
+			DepositSumm->TextName = Convert::ToString(summ1);
 
 		}
 		//MessageBox();
@@ -592,19 +598,56 @@ namespace Diploma {
 	}
 
 	private: System::Void MinusTerm_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (TermNumber->TextName != "1")
-		{
+		if (TermNumber->TextName != "1") {
 			int temp1 = Convert::ToInt32(TermNumber->TextName);
 			temp1--;
 			TermNumber->TextName = Convert::ToString(temp1);
 		}
+		int TermStat = Convert::ToInt32(TermNumber->TextName);
+		if (TermStat == 1) {
+			PercentageRate->TextName = "10 % ";
+		}
+		if (TermStat == 2) {
+			PercentageRate->TextName = "10,5 % ";
+		}
+		if (TermStat >= 3 && TermStat <= 5) {
+			PercentageRate->TextName = "11,5 % ";
+		}
+		if (TermStat >= 6 && TermStat <= 8) {
+			PercentageRate->TextName = "12 % ";
+		}
+		if (TermStat >= 9 && TermStat <= 10) {
+			PercentageRate->TextName = "12,5 % ";
+		}
+		if (TermStat == 12) {
+			PercentageRate->TextName = "13 % ";
+		}
+		
 	}
-	private: System::Void PlusTerm_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (TermNumber->TextName != "12")
-		{
+	private: System::Void PlusTerm_Click(System::Object^ sender, System::EventArgs^ e) {	
+		if (TermNumber->TextName != "12") {
 			int temp2 = Convert::ToInt32(TermNumber->TextName);
 			temp2++;
 			TermNumber->TextName = Convert::ToString(temp2);
+		}
+		int TermStat = Convert::ToInt32(TermNumber->TextName);
+		if (TermStat == 1) {
+			PercentageRate->TextName = "10 % ";
+		}
+		if (TermStat == 2) {
+			PercentageRate->TextName = "10,5 % ";
+		}
+		if (TermStat >= 3 && TermStat <= 5) {
+			PercentageRate->TextName = "11,5 % ";
+		}
+		if (TermStat >= 6 && TermStat <= 8) {
+			PercentageRate->TextName = "12 % ";
+		}
+		if (TermStat >= 9 && TermStat <= 10) {
+			PercentageRate->TextName = "12,5 % ";
+		}
+		if (TermStat == 12) {
+			PercentageRate->TextName = "13 % ";
 		}
 	}
 	};

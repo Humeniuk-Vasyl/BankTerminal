@@ -43,8 +43,10 @@ namespace Diploma {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
-	private: ::JThinButton::JThinButton^ jThinButton2;
-	private: ::JThinButton::JThinButton^ jThinButton1;
+	private: ::JThinButton::JThinButton^ MainMenuButton;
+	private: ::JThinButton::JThinButton^ EndButton;
+
+
 
 
 	private:
@@ -68,8 +70,8 @@ namespace Diploma {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->jThinButton2 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton1 = (gcnew ::JThinButton::JThinButton());
+			this->MainMenuButton = (gcnew ::JThinButton::JThinButton());
+			this->EndButton = (gcnew ::JThinButton::JThinButton());
 			this->menuStrip1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -109,7 +111,7 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			// 
 			// aboutToolStripMenuItem
@@ -179,65 +181,65 @@ namespace Diploma {
 			this->label1->TabIndex = 9;
 			this->label1->Text = L"ÎÏÅÐÀÖ²ß ÏÐÎÉØËÀ ÓÑÏ²ØÍÎ";
 			// 
-			// jThinButton2
+			// MainMenuButton
 			// 
-			this->jThinButton2->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton2->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->MainMenuButton->BackColor = System::Drawing::Color::Transparent;
+			this->MainMenuButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->BorderColor = System::Drawing::Color::White;
-			this->jThinButton2->BorderRadius = 40;
-			this->jThinButton2->ButtonText = L"ÍÀ ÃÎËÎÂÍÓ";
-			this->jThinButton2->Font = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->MainMenuButton->BorderColor = System::Drawing::Color::White;
+			this->MainMenuButton->BorderRadius = 40;
+			this->MainMenuButton->ButtonText = L"ÍÀ ÃÎËÎÂÍÓ";
+			this->MainMenuButton->Font = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->jThinButton2->Font_Size = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->MainMenuButton->Font_Size = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->jThinButton2->ForeColors = System::Drawing::Color::Gainsboro;
-			this->jThinButton2->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->MainMenuButton->ForeColors = System::Drawing::Color::Gainsboro;
+			this->MainMenuButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+			this->MainMenuButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton2->HoverFontColor = System::Drawing::Color::WhiteSmoke;
-			this->jThinButton2->LineThickness = 2;
-			this->jThinButton2->Location = System::Drawing::Point(315, 351);
-			this->jThinButton2->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton2->Name = L"jThinButton2";
-			this->jThinButton2->Size = System::Drawing::Size(224, 83);
-			this->jThinButton2->TabIndex = 11;
-			this->jThinButton2->Click += gcnew System::EventHandler(this, &EndForm::jThinButton2_Click);
+			this->MainMenuButton->HoverFontColor = System::Drawing::Color::WhiteSmoke;
+			this->MainMenuButton->LineThickness = 2;
+			this->MainMenuButton->Location = System::Drawing::Point(315, 351);
+			this->MainMenuButton->Margin = System::Windows::Forms::Padding(4);
+			this->MainMenuButton->Name = L"MainMenuButton";
+			this->MainMenuButton->Size = System::Drawing::Size(224, 83);
+			this->MainMenuButton->TabIndex = 11;
+			this->MainMenuButton->Click += gcnew System::EventHandler(this, &EndForm::jThinButton2_Click);
 			// 
-			// jThinButton1
+			// EndButton
 			// 
-			this->jThinButton1->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->BorderColor = System::Drawing::Color::White;
-			this->jThinButton1->BorderRadius = 40;
-			this->jThinButton1->ButtonText = L"ÇÀÊ²Í×ÈÒÈ";
-			this->jThinButton1->Font = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->jThinButton1->Font_Size = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->jThinButton1->ForeColors = System::Drawing::Color::Gainsboro;
-			this->jThinButton1->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+			this->EndButton->BackColor = System::Drawing::Color::Transparent;
+			this->EndButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton1->HoverFontColor = System::Drawing::Color::WhiteSmoke;
-			this->jThinButton1->LineThickness = 2;
-			this->jThinButton1->Location = System::Drawing::Point(65, 351);
-			this->jThinButton1->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton1->Name = L"jThinButton1";
-			this->jThinButton1->Size = System::Drawing::Size(224, 83);
-			this->jThinButton1->TabIndex = 12;
-			this->jThinButton1->Click += gcnew System::EventHandler(this, &EndForm::jThinButton1_Click);
+			this->EndButton->BorderColor = System::Drawing::Color::White;
+			this->EndButton->BorderRadius = 40;
+			this->EndButton->ButtonText = L"ÇÀÊ²Í×ÈÒÈ";
+			this->EndButton->Font = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->EndButton->Font_Size = (gcnew System::Drawing::Font(L"Cooper Black", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->EndButton->ForeColors = System::Drawing::Color::Gainsboro;
+			this->EndButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->EndButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->EndButton->HoverFontColor = System::Drawing::Color::WhiteSmoke;
+			this->EndButton->LineThickness = 2;
+			this->EndButton->Location = System::Drawing::Point(65, 351);
+			this->EndButton->Margin = System::Windows::Forms::Padding(4);
+			this->EndButton->Name = L"EndButton";
+			this->EndButton->Size = System::Drawing::Size(224, 83);
+			this->EndButton->TabIndex = 12;
+			this->EndButton->Click += gcnew System::EventHandler(this, &EndForm::jThinButton1_Click);
 			// 
 			// EndForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(600, 488);
-			this->Controls->Add(this->jThinButton1);
-			this->Controls->Add(this->jThinButton2);
+			this->Controls->Add(this->EndButton);
+			this->Controls->Add(this->MainMenuButton);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label3);
