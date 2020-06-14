@@ -140,7 +140,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// exitToolStripMenuItem
@@ -162,7 +162,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// label3
@@ -340,7 +340,7 @@ namespace Diploma {
 			this->DepositFormButton->Location = System::Drawing::Point(472, 203);
 			this->DepositFormButton->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->DepositFormButton->Name = L"DepositFormButton";
-			this->DepositFormButton->Size = System::Drawing::Size(169, 67);
+			this->DepositFormButton->Size = System::Drawing::Size(169, 68);
 			this->DepositFormButton->TabIndex = 23;
 			this->DepositFormButton->Click += gcnew System::EventHandler(this, &MainMenuPage::DepositForm_Click);
 			// 
@@ -391,10 +391,10 @@ namespace Diploma {
 			this->ChangePIN_CodeOrPhone->HoverFontColor = System::Drawing::Color::White;
 			this->ChangePIN_CodeOrPhone->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->ChangePIN_CodeOrPhone->LineThickness = 2;
-			this->ChangePIN_CodeOrPhone->Location = System::Drawing::Point(472, 271);
+			this->ChangePIN_CodeOrPhone->Location = System::Drawing::Point(472, 269);
 			this->ChangePIN_CodeOrPhone->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->ChangePIN_CodeOrPhone->Name = L"ChangePIN_CodeOrPhone";
-			this->ChangePIN_CodeOrPhone->Size = System::Drawing::Size(169, 67);
+			this->ChangePIN_CodeOrPhone->Size = System::Drawing::Size(169, 68);
 			this->ChangePIN_CodeOrPhone->TabIndex = 25;
 			this->ChangePIN_CodeOrPhone->Click += gcnew System::EventHandler(this, &MainMenuPage::ChangePIN_CodeOrPhone_Click);
 			// 

@@ -218,6 +218,9 @@
     <EmbeddedResource Include="Card_OutForm.resx">
       <DependentUpon>Card_OutForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangingForm.resx">
+      <DependentUpon>ChangingForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConversionForm.resx">
       <DependentUpon>ConversionForm.h</DependentUpon>
     </EmbeddedResource>
