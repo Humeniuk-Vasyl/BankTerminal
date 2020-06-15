@@ -172,8 +172,9 @@ namespace Diploma {
 			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->mainMenuToolStripMenuItem->Text = L"Main";
+			this->mainMenuToolStripMenuItem->Click += gcnew System::EventHandler(this, &Phone_InForm::mainMenuToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -183,8 +184,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Phone_InForm::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -577,7 +579,12 @@ namespace Diploma {
 	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
-
+	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
 	private: System::Void PhoneReplButton_click(System::Object^ sender, System::EventArgs^ e) {
 		int SummTxt;
 		try
@@ -675,5 +682,6 @@ namespace Diploma {
 		EndForm^ _EndForm2 = gcnew EndForm();
 		_EndForm2->ShowDialog();
 	}
+
 	};
 }

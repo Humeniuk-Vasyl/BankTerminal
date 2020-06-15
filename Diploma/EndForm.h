@@ -100,7 +100,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// exitToolStripMenuItem
@@ -111,8 +111,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &EndForm::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -122,7 +123,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// label3
@@ -207,7 +208,7 @@ namespace Diploma {
 			this->MainMenuButton->Name = L"MainMenuButton";
 			this->MainMenuButton->Size = System::Drawing::Size(224, 83);
 			this->MainMenuButton->TabIndex = 11;
-			this->MainMenuButton->Click += gcnew System::EventHandler(this, &EndForm::jThinButton2_Click);
+			this->MainMenuButton->Click += gcnew System::EventHandler(this, &EndForm::MainMenuButton_Click);
 			// 
 			// EndButton
 			// 
@@ -233,7 +234,7 @@ namespace Diploma {
 			this->EndButton->Name = L"EndButton";
 			this->EndButton->Size = System::Drawing::Size(224, 83);
 			this->EndButton->TabIndex = 12;
-			this->EndButton->Click += gcnew System::EventHandler(this, &EndForm::jThinButton1_Click);
+			this->EndButton->Click += gcnew System::EventHandler(this, &EndForm::EndButton_Click);
 			// 
 			// EndForm
 			// 
@@ -260,10 +261,10 @@ namespace Diploma {
 
 		}
 #pragma endregion
-	private: System::Void jThinButton1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
-	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
 	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -272,9 +273,11 @@ namespace Diploma {
 	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
-	private: System::Void jThinButton2_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void EndButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
+	private: System::Void MainMenuButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
 	};
 }

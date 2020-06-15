@@ -108,7 +108,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(532, 30);
+			this->menuStrip1->Size = System::Drawing::Size(532, 27);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -121,7 +121,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 26);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// exitToolStripMenuItem
@@ -132,7 +132,7 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &HelloForm::exitToolStripMenuItem_Click);
 			// 
@@ -144,7 +144,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 26);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
 			this->aboutToolStripMenuItem->Text = L"About";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &HelloForm::aboutToolStripMenuItem_Click);
 			// 
@@ -253,7 +253,7 @@ namespace Diploma {
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 30);
+			this->panel1->Location = System::Drawing::Point(0, 27);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(532, 100);
 			this->panel1->TabIndex = 8;
@@ -326,5 +326,5 @@ namespace Diploma {
 	private: System::Void aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageBox::Show("This is the first form - Hello Form \n U can confirm your account or create a new one");
 	}
-};
+	};
 }

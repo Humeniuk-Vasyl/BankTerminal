@@ -136,7 +136,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(700, 27);
+			this->menuStrip1->Size = System::Drawing::Size(700, 28);
 			this->menuStrip1->TabIndex = 6;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -152,7 +152,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// mainMenuToolStripMenuItem
@@ -163,8 +163,9 @@ namespace Diploma {
 			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->mainMenuToolStripMenuItem->Text = L"Main";
+			this->mainMenuToolStripMenuItem->Click += gcnew System::EventHandler(this, &Card_InForm::mainMenuToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -174,8 +175,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Card_InForm::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -185,7 +187,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// panel1
@@ -194,7 +196,7 @@ namespace Diploma {
 				static_cast<System::Int32>(static_cast<System::Byte>(37)));
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 27);
+			this->panel1->Location = System::Drawing::Point(0, 28);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(700, 106);
 			this->panel1->TabIndex = 10;
@@ -739,6 +741,12 @@ namespace Diploma {
 		this->Hide();
 		EndForm^ _EndForm1 = gcnew EndForm();
 		_EndForm1->ShowDialog();
+	}
+	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
 	}
 	};
 }

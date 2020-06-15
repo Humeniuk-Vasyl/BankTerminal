@@ -73,6 +73,7 @@ namespace Diploma {
 
 	private: ::JThinButton::JThinButton^ PhoneReplenishmentFormButton;
 	private: ::JThinButton::JThinButton^ ChangePIN_CodeOrPhone;
+	private: System::Windows::Forms::ToolStripMenuItem^ menuToolStripMenuItem;
 
 
 
@@ -98,6 +99,7 @@ namespace Diploma {
 			this->components = (gcnew System::ComponentModel::Container());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -135,7 +137,10 @@ namespace Diploma {
 			// 
 			this->fileToolStripMenuItem->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->exitToolStripMenuItem });
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->menuToolStripMenuItem,
+					this->exitToolStripMenuItem
+			});
 			this->fileToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
@@ -143,16 +148,25 @@ namespace Diploma {
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
+			// menuToolStripMenuItem
+			// 
+			this->menuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->menuToolStripMenuItem->Name = L"menuToolStripMenuItem";
+			this->menuToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->menuToolStripMenuItem->Text = L"Menu";
+			this->menuToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainMenuPage::menuToolStripMenuItem_Click);
+			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->BackColor = System::Drawing::Color::White;
-			this->exitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->exitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold));
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainMenuPage::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -439,6 +453,12 @@ namespace Diploma {
 	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
+	private: System::Void menuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
 	private: System::Void ReplanishmentFormButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		Card_InForm^ _Card_InForm1 = gcnew Card_InForm();		// creating the Replenishment Form
@@ -474,7 +494,5 @@ namespace Diploma {
 		ConversionForm^ _ConversionForm1 = gcnew ConversionForm();// creating the Conversion n Buy/Sale Form
 		_ConversionForm1->ShowDialog();							  // going to Conversion n Buy/Sale
 	}
-
-
-};
+	};
 }

@@ -177,7 +177,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(700, 27);
+			this->menuStrip1->Size = System::Drawing::Size(700, 28);
 			this->menuStrip1->TabIndex = 11;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -193,7 +193,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// mainMenuToolStripMenuItem
@@ -204,7 +204,7 @@ namespace Diploma {
 			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->mainMenuToolStripMenuItem->Text = L"Main";
 			this->mainMenuToolStripMenuItem->Click += gcnew System::EventHandler(this, &ConversionForm::mainMenuToolStripMenuItem_Click);
 			// 
@@ -216,8 +216,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &ConversionForm::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -227,7 +228,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// label2
@@ -772,6 +773,9 @@ namespace Diploma {
 	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
 	private: System::Void jMetroTextBox1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void CalculateButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -834,5 +838,6 @@ namespace Diploma {
 	private: System::Void AdditionallyButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageBox::Show(" Фунт стерлінгів - GBP - 32,40 / 34,00\n Швейцарський франк - CHF - 27,00/ 28,40\n Золото - 1 385,42 /1 629,71\n Паладій - 1 360,00 / 1 860,00\n Платина - 670,00 / 972,71 \n Срібло - 14,45 / 21,77");
 	}
+
 	};
 }

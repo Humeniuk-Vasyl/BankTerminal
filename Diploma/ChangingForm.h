@@ -122,7 +122,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(700, 27);
+			this->menuStrip1->Size = System::Drawing::Size(700, 28);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -138,7 +138,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// menuToolStripMenuItem
@@ -146,8 +146,9 @@ namespace Diploma {
 			this->menuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->menuToolStripMenuItem->Name = L"menuToolStripMenuItem";
-			this->menuToolStripMenuItem->Size = System::Drawing::Size(138, 26);
+			this->menuToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->menuToolStripMenuItem->Text = L"Menu";
+			this->menuToolStripMenuItem->Click += gcnew System::EventHandler(this, &ChangingForm::menuToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -156,8 +157,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(138, 26);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &ChangingForm::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -167,7 +169,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// panel1
@@ -176,7 +178,7 @@ namespace Diploma {
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 27);
+			this->panel1->Location = System::Drawing::Point(0, 28);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(700, 100);
 			this->panel1->TabIndex = 9;
@@ -516,13 +518,16 @@ namespace Diploma {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
 	private: System::Void ChangePIN_codeButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (NewPINTxt->TextName == "" || ReNewPINTxt->TextName == "" || OldPINTxt1->TextName == ""){
-			MessageBox::Show("Please fill all data");}
-		if (OldPINTxt1->TextName != n->PIN_Code){
-			MessageBox::Show("Incorect old PIN-code");}
+		if (NewPINTxt->TextName == "" || ReNewPINTxt->TextName == "" || OldPINTxt1->TextName == "") {
+			MessageBox::Show("Please fill all data");
+		}
+		if (OldPINTxt1->TextName != n->PIN_Code) {
+			MessageBox::Show("Incorect old PIN-code");
+		}
 		else if (NewPINTxt->TextName != ReNewPINTxt->TextName) {
-			MessageBox::Show("PIN-codes don't match");}
-		else{
+			MessageBox::Show("PIN-codes don't match");
+		}
+		else {
 			int NewPIN_Code = Convert::ToInt32(NewPINTxt->TextName);
 			f6.UpdatePIN_Code(n, NewPINTxt->TextName);// Updating user PIN_code
 			this->Hide();							// hiding changing form
@@ -550,5 +555,12 @@ namespace Diploma {
 			MessageBox::Show("Phone Number don't match");
 		}
 	}
-	};
+	private: System::Void menuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
+
+};
 }

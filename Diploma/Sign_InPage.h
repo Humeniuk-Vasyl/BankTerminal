@@ -149,6 +149,7 @@ namespace Diploma {
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
 			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Sign_InPage::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -425,6 +426,14 @@ namespace Diploma {
 	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
+	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		Log_InPage^ _LogInPage1_1 = gcnew Log_InPage();
+		_LogInPage1_1->Show();
+	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
 	private: System::Void Sign_InSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((CardNumberTxt->TextName == "") || (PIN_CodeTxt->TextName == "") || (UserNameTxt->TextName == ""))
 		{
@@ -446,11 +455,6 @@ namespace Diploma {
 			Log_InPage^ _LogInPage1 = gcnew Log_InPage();
 			_LogInPage1->Show();
 		}
-	}
-	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		Log_InPage^ _LogInPage1_1 = gcnew Log_InPage();
-		_LogInPage1_1->Show();
 	}
 	};
 }

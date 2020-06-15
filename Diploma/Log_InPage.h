@@ -126,8 +126,9 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Log_InPage::exitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -330,6 +331,9 @@ namespace Diploma {
 	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
 	private: System::Void SubmitButtton_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((CardNumberTxt->TextName == "") || (PIN_CodeTxt->TextName == ""))
 		{
@@ -374,7 +378,7 @@ namespace Diploma {
 				DataTable^ dtbl = gcnew DataTable();
 				sda->Fill(dtbl);
 				cmd->ExecuteNonQuery();
-				
+
 				if (dtbl->Rows->Count == 1)
 				{
 					ParametersClass^ n1 = gcnew ParametersClass();
@@ -388,7 +392,7 @@ namespace Diploma {
 				}
 				else
 				{
-					
+
 					MessageBox::Show("Check your card number and PIN-code");
 				}
 			}
@@ -402,5 +406,6 @@ namespace Diploma {
 			}
 		};
 	}
+
 	};
 }
