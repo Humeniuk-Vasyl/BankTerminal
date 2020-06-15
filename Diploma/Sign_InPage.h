@@ -99,8 +99,7 @@ namespace Diploma {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->menuStrip1->BackColor = System::Drawing::Color::Crimson;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->fileToolStripMenuItem,
@@ -108,14 +107,13 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(514, 27);
+			this->menuStrip1->Size = System::Drawing::Size(514, 30);
 			this->menuStrip1->TabIndex = 3;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->fileToolStripMenuItem->BackColor = System::Drawing::Color::Crimson;
 			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->mainMenuToolStripMenuItem,
 					this->exitToolStripMenuItem
@@ -132,10 +130,9 @@ namespace Diploma {
 			this->mainMenuToolStripMenuItem->BackColor = System::Drawing::Color::White;
 			this->mainMenuToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::Crimson;
 			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->mainMenuToolStripMenuItem->Text = L"Main";
 			// 
 			// exitToolStripMenuItem
@@ -143,16 +140,14 @@ namespace Diploma {
 			this->exitToolStripMenuItem->BackColor = System::Drawing::Color::White;
 			this->exitToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::Crimson;
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			// 
 			// aboutToolStripMenuItem
 			// 
-			this->aboutToolStripMenuItem->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->aboutToolStripMenuItem->BackColor = System::Drawing::Color::Crimson;
 			this->aboutToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
@@ -163,8 +158,7 @@ namespace Diploma {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->label3->BackColor = System::Drawing::Color::Crimson;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
@@ -217,11 +211,10 @@ namespace Diploma {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->panel1->BackColor = System::Drawing::Color::Crimson;
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 27);
+			this->panel1->Location = System::Drawing::Point(0, 30);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(514, 100);
 			this->panel1->TabIndex = 11;
@@ -231,7 +224,7 @@ namespace Diploma {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(158, 29);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(202, 40);
@@ -355,8 +348,7 @@ namespace Diploma {
 			// Sign_InSubmit
 			// 
 			this->Sign_InSubmit->BackColor = System::Drawing::Color::Transparent;
-			this->Sign_InSubmit->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->Sign_InSubmit->BackgroundColor = System::Drawing::Color::Crimson;
 			this->Sign_InSubmit->BorderColor = System::Drawing::Color::White;
 			this->Sign_InSubmit->BorderRadius = 40;
 			this->Sign_InSubmit->ButtonText = L"Sign-In";
@@ -365,10 +357,8 @@ namespace Diploma {
 			this->Sign_InSubmit->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Sign_InSubmit->ForeColors = System::Drawing::Color::Snow;
-			this->Sign_InSubmit->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->Sign_InSubmit->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->Sign_InSubmit->HoverBackground = System::Drawing::Color::Crimson;
+			this->Sign_InSubmit->HoverBorder = System::Drawing::Color::Crimson;
 			this->Sign_InSubmit->HoverFontColor = System::Drawing::Color::White;
 			this->Sign_InSubmit->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Sign_InSubmit->LineThickness = 2;
@@ -433,7 +423,7 @@ namespace Diploma {
 	private: System::Void Sign_InSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((jMetroTextBox1->TextName == "") || (jMetroTextBox2->TextName == "") || (jMetroTextBox3->TextName == ""))
 		{
-			MessageBox::Show("Input data!");
+			MessageBox::Show("Input all data!");
 		}
 		else
 		{

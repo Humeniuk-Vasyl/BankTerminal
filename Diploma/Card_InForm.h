@@ -135,7 +135,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(700, 30);
+			this->menuStrip1->Size = System::Drawing::Size(700, 27);
 			this->menuStrip1->TabIndex = 6;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -151,7 +151,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 26);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// mainMenuToolStripMenuItem
@@ -184,7 +184,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 26);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// panel1
@@ -193,7 +193,7 @@ namespace Diploma {
 				static_cast<System::Int32>(static_cast<System::Byte>(37)));
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 30);
+			this->panel1->Location = System::Drawing::Point(0, 27);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(700, 106);
 			this->panel1->TabIndex = 10;
@@ -227,6 +227,8 @@ namespace Diploma {
 			this->label3->TabIndex = 11;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &Card_InForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &Card_InForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Card_InForm::label3_MouseMove);
 			// 
 			// panel2
 			// 
@@ -656,7 +658,12 @@ namespace Diploma {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
-
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
 	private: System::Void ReplanishButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//Using the card in/out function
 

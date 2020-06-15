@@ -249,6 +249,13 @@
   <ItemGroup>
     <Media Include="Audio\1.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Img\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\hierarchy.pdf" />
+    <None Include="Img\hierarchy.vsd" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -16,6 +16,9 @@
     <Filter Include="Файлы ресурсов\Audio">
       <UniqueIdentifier>{893b5400-b2aa-4ded-a65d-9ef3c0a2ace1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Img">
+      <UniqueIdentifier>{57d58818-384e-455d-a67e-57b0c873ca84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HelloForm.cpp">
@@ -112,5 +115,18 @@
     <Media Include="Audio\1.wav">
       <Filter>Файлы ресурсов\Audio</Filter>
     </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Img\bg.png">
+      <Filter>Файлы ресурсов\Img</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\hierarchy.pdf">
+      <Filter>Файлы ресурсов\Img</Filter>
+    </None>
+    <None Include="Img\hierarchy.vsd">
+      <Filter>Файлы ресурсов\Img</Filter>
+    </None>
   </ItemGroup>
 </Project>

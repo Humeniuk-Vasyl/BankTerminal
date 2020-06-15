@@ -52,7 +52,8 @@ namespace Diploma {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label6;
 	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox4;
-	private: ::JThinButton::JThinButton^ jThinButton7;
+	private: ::JThinButton::JThinButton^ PhoneReplButton;
+
 	private: ::JThinButton::JThinButton^ jThinButton6;
 	private: ::JThinButton::JThinButton^ jThinButton5;
 	private: ::JThinButton::JThinButton^ jThinButton4;
@@ -91,7 +92,7 @@ namespace Diploma {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->jMetroTextBox4 = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jThinButton7 = (gcnew ::JThinButton::JThinButton());
+			this->PhoneReplButton = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton6 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton5 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton4 = (gcnew ::JThinButton::JThinButton());
@@ -117,6 +118,8 @@ namespace Diploma {
 			this->label3->TabIndex = 9;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &Phone_InForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &Phone_InForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Phone_InForm::label3_MouseMove);
 			// 
 			// menuStrip1
 			// 
@@ -209,8 +212,10 @@ namespace Diploma {
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::Chartreuse;
-			this->panel2->ForeColor = System::Drawing::Color::Chartreuse;
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(176)),
+				static_cast<System::Int32>(static_cast<System::Byte>(37)));
+			this->panel2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(176)),
+				static_cast<System::Int32>(static_cast<System::Byte>(37)));
 			this->panel2->Location = System::Drawing::Point(348, 156);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(5, 414);
@@ -258,7 +263,7 @@ namespace Diploma {
 			this->jMetroTextBox1->BackColor = System::Drawing::Color::Transparent;
 			this->jMetroTextBox1->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox1->BorderRadius = 20;
-			this->jMetroTextBox1->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox1->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox1->ForeColors = System::Drawing::Color::Gray;
@@ -325,31 +330,31 @@ namespace Diploma {
 			this->jMetroTextBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->jMetroTextBox4->TextName = L"380";
 			// 
-			// jThinButton7
+			// PhoneReplButton
 			// 
-			this->jThinButton7->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton7->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)),
+			this->PhoneReplButton->BackColor = System::Drawing::Color::Transparent;
+			this->PhoneReplButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)),
 				static_cast<System::Int32>(static_cast<System::Byte>(176)), static_cast<System::Int32>(static_cast<System::Byte>(37)));
-			this->jThinButton7->BorderColor = System::Drawing::Color::White;
-			this->jThinButton7->BorderRadius = 23;
-			this->jThinButton7->ButtonText = L"ононбмхрх";
-			this->jThinButton7->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PhoneReplButton->BorderColor = System::Drawing::Color::White;
+			this->PhoneReplButton->BorderRadius = 23;
+			this->PhoneReplButton->ButtonText = L"ононбмхрх";
+			this->PhoneReplButton->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->jThinButton7->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PhoneReplButton->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->jThinButton7->ForeColors = System::Drawing::SystemColors::Highlight;
-			this->jThinButton7->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->PhoneReplButton->ForeColors = System::Drawing::Color::WhiteSmoke;
+			this->PhoneReplButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton7->LineThickness = 2;
-			this->jThinButton7->Location = System::Drawing::Point(374, 517);
-			this->jThinButton7->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton7->Name = L"jThinButton7";
-			this->jThinButton7->Size = System::Drawing::Size(304, 52);
-			this->jThinButton7->TabIndex = 49;
-			this->jThinButton7->Click += gcnew System::EventHandler(this, &Phone_InForm::jThinButton7_Click);
+			this->PhoneReplButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->PhoneReplButton->HoverFontColor = System::Drawing::Color::White;
+			this->PhoneReplButton->LineThickness = 2;
+			this->PhoneReplButton->Location = System::Drawing::Point(374, 517);
+			this->PhoneReplButton->Margin = System::Windows::Forms::Padding(4);
+			this->PhoneReplButton->Name = L"PhoneReplButton";
+			this->PhoneReplButton->Size = System::Drawing::Size(304, 52);
+			this->PhoneReplButton->TabIndex = 49;
+			this->PhoneReplButton->Click += gcnew System::EventHandler(this, &Phone_InForm::PhoneReplButton_click);
 			// 
 			// jThinButton6
 			// 
@@ -510,8 +515,9 @@ namespace Diploma {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(700, 584);
-			this->Controls->Add(this->jThinButton7);
+			this->Controls->Add(this->PhoneReplButton);
 			this->Controls->Add(this->jThinButton6);
 			this->Controls->Add(this->jThinButton5);
 			this->Controls->Add(this->jThinButton4);
@@ -544,12 +550,18 @@ namespace Diploma {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
-private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	//MessageBox();
-	this->Hide();
-	EndForm^ _EndForm4 = gcnew EndForm();
-	_EndForm4->ShowDialog();
-}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
+	
+	private: System::Void PhoneReplButton_click(System::Object^ sender, System::EventArgs^ e) {
+		//MessageBox();
+		this->Hide();
+		EndForm^ _EndForm4 = gcnew EndForm();
+		_EndForm4->ShowDialog();
+	}
 };
 }

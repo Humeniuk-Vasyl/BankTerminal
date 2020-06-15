@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "EndForm.h"
 #include "ParametersClass.h"
+#include "DBFicsation.h"
 namespace Diploma {
 
 	using namespace System;
@@ -46,23 +47,26 @@ namespace Diploma {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: ::JThinButton::JThinButton^ jThinButton7;
+	private: ::JThinButton::JThinButton^ WithdrowalButton;
+
 	private: ::JThinButton::JThinButton^ jThinButton6;
 	private: ::JThinButton::JThinButton^ jThinButton5;
 	private: ::JThinButton::JThinButton^ jThinButton4;
 	private: ::JThinButton::JThinButton^ jThinButton3;
 	private: ::JThinButton::JThinButton^ jThinButton2;
 	private: ::JThinButton::JThinButton^ jThinButton1;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox1;
+	private: ::JMetroTextBox::JMetroTextBox^ SummOfWithdrowal;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
 	private: ::JMetroTextBox::JMetroTextBox^ CardNumberTxt;
 	private: ::JMetroTextBox::JMetroTextBox^ UserNameTxt;
+	private: ::JMetroTextBox::JMetroTextBox^ MaxWithdrowalSumm;
 
 
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox2;
+
 	private: ::JDragControl::JDragControl^ jDragControl1;
 	private: System::ComponentModel::IContainer^ components;
 
@@ -90,21 +94,21 @@ namespace Diploma {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->jThinButton7 = (gcnew ::JThinButton::JThinButton());
+			this->WithdrowalButton = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton6 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton5 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton4 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton3 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton2 = (gcnew ::JThinButton::JThinButton());
 			this->jThinButton1 = (gcnew ::JThinButton::JThinButton());
-			this->jMetroTextBox1 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->SummOfWithdrowal = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->CardNumberTxt = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->UserNameTxt = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jMetroTextBox2 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->MaxWithdrowalSumm = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->menuStrip1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -183,6 +187,8 @@ namespace Diploma {
 			this->label3->TabIndex = 8;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &Card_OutForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &Card_OutForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Card_OutForm::label3_MouseMove);
 			// 
 			// panel1
 			// 
@@ -214,28 +220,28 @@ namespace Diploma {
 			this->panel2->Size = System::Drawing::Size(5, 390);
 			this->panel2->TabIndex = 10;
 			// 
-			// jThinButton7
+			// WithdrowalButton
 			// 
-			this->jThinButton7->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton7->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton7->BorderColor = System::Drawing::Color::White;
-			this->jThinButton7->BorderRadius = 23;
-			this->jThinButton7->ButtonText = L"Зняти кошти";
-			this->jThinButton7->Font = (gcnew System::Drawing::Font(L"Verdana", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->WithdrowalButton->BackColor = System::Drawing::Color::Transparent;
+			this->WithdrowalButton->BackgroundColor = System::Drawing::Color::Coral;
+			this->WithdrowalButton->BorderColor = System::Drawing::Color::White;
+			this->WithdrowalButton->BorderRadius = 23;
+			this->WithdrowalButton->ButtonText = L"Зняти кошти";
+			this->WithdrowalButton->Font = (gcnew System::Drawing::Font(L"Verdana", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton7->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->WithdrowalButton->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton7->ForeColors = System::Drawing::Color::Black;
-			this->jThinButton7->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton7->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton7->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton7->LineThickness = 2;
-			this->jThinButton7->Location = System::Drawing::Point(374, 484);
-			this->jThinButton7->Margin = System::Windows::Forms::Padding(5);
-			this->jThinButton7->Name = L"jThinButton7";
-			this->jThinButton7->Size = System::Drawing::Size(304, 52);
-			this->jThinButton7->TabIndex = 36;
-			this->jThinButton7->Click += gcnew System::EventHandler(this, &Card_OutForm::jThinButton7_Click);
+			this->WithdrowalButton->ForeColors = System::Drawing::Color::Black;
+			this->WithdrowalButton->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->WithdrowalButton->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->WithdrowalButton->HoverFontColor = System::Drawing::Color::White;
+			this->WithdrowalButton->LineThickness = 2;
+			this->WithdrowalButton->Location = System::Drawing::Point(374, 484);
+			this->WithdrowalButton->Margin = System::Windows::Forms::Padding(5);
+			this->WithdrowalButton->Name = L"WithdrowalButton";
+			this->WithdrowalButton->Size = System::Drawing::Size(304, 52);
+			this->WithdrowalButton->TabIndex = 36;
+			this->WithdrowalButton->Click += gcnew System::EventHandler(this, &Card_OutForm::WithdrowalButton_Click);
 			// 
 			// jThinButton6
 			// 
@@ -369,31 +375,31 @@ namespace Diploma {
 			this->jThinButton1->Size = System::Drawing::Size(150, 110);
 			this->jThinButton1->TabIndex = 30;
 			// 
-			// jMetroTextBox1
+			// SummOfWithdrowal
 			// 
-			this->jMetroTextBox1->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox1->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox1->BorderRadius = 20;
-			this->jMetroTextBox1->FillColor = System::Drawing::SystemColors::Window;
-			this->jMetroTextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox1->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox1->IsPassword = false;
-			this->jMetroTextBox1->LineThickness = 2;
-			this->jMetroTextBox1->Location = System::Drawing::Point(68, 189);
-			this->jMetroTextBox1->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox1->MaxLength = 32767;
-			this->jMetroTextBox1->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox1->Name = L"jMetroTextBox1";
-			this->jMetroTextBox1->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox1->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox1->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox1->ReadOnly = false;
-			this->jMetroTextBox1->Size = System::Drawing::Size(218, 48);
-			this->jMetroTextBox1->TabIndex = 38;
-			this->jMetroTextBox1->TabStop = false;
-			this->jMetroTextBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox1->TextName = L"";
+			this->SummOfWithdrowal->BackColor = System::Drawing::Color::Transparent;
+			this->SummOfWithdrowal->BorderColor = System::Drawing::Color::Empty;
+			this->SummOfWithdrowal->BorderRadius = 20;
+			this->SummOfWithdrowal->FillColor = System::Drawing::SystemColors::Window;
+			this->SummOfWithdrowal->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->SummOfWithdrowal->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->SummOfWithdrowal->ForeColors = System::Drawing::Color::Gray;
+			this->SummOfWithdrowal->IsPassword = false;
+			this->SummOfWithdrowal->LineThickness = 2;
+			this->SummOfWithdrowal->Location = System::Drawing::Point(68, 189);
+			this->SummOfWithdrowal->Margin = System::Windows::Forms::Padding(4);
+			this->SummOfWithdrowal->MaxLength = 32767;
+			this->SummOfWithdrowal->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->SummOfWithdrowal->Name = L"SummOfWithdrowal";
+			this->SummOfWithdrowal->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->SummOfWithdrowal->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->SummOfWithdrowal->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->SummOfWithdrowal->ReadOnly = false;
+			this->SummOfWithdrowal->Size = System::Drawing::Size(218, 48);
+			this->SummOfWithdrowal->TabIndex = 38;
+			this->SummOfWithdrowal->TabStop = false;
+			this->SummOfWithdrowal->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->SummOfWithdrowal->TextName = L"";
 			// 
 			// label1
 			// 
@@ -491,31 +497,31 @@ namespace Diploma {
 			this->UserNameTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->UserNameTxt->TextName = L"Name";
 			// 
-			// jMetroTextBox2
+			// MaxWithdrowalSumm
 			// 
-			this->jMetroTextBox2->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox2->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox2->BorderRadius = 10;
-			this->jMetroTextBox2->Enabled = false;
-			this->jMetroTextBox2->FillColor = System::Drawing::Color::White;
-			this->jMetroTextBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox2->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox2->IsPassword = false;
-			this->jMetroTextBox2->LineThickness = 2;
-			this->jMetroTextBox2->Location = System::Drawing::Point(234, 354);
-			this->jMetroTextBox2->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox2->MaxLength = 32767;
-			this->jMetroTextBox2->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox2->Name = L"jMetroTextBox2";
-			this->jMetroTextBox2->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox2->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox2->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox2->ReadOnly = false;
-			this->jMetroTextBox2->Size = System::Drawing::Size(110, 48);
-			this->jMetroTextBox2->TabIndex = 42;
-			this->jMetroTextBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox2->TextName = L"50000";
+			this->MaxWithdrowalSumm->BackColor = System::Drawing::Color::Transparent;
+			this->MaxWithdrowalSumm->BorderColor = System::Drawing::Color::Empty;
+			this->MaxWithdrowalSumm->BorderRadius = 10;
+			this->MaxWithdrowalSumm->Enabled = false;
+			this->MaxWithdrowalSumm->FillColor = System::Drawing::Color::White;
+			this->MaxWithdrowalSumm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->MaxWithdrowalSumm->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->MaxWithdrowalSumm->ForeColors = System::Drawing::Color::Gray;
+			this->MaxWithdrowalSumm->IsPassword = false;
+			this->MaxWithdrowalSumm->LineThickness = 2;
+			this->MaxWithdrowalSumm->Location = System::Drawing::Point(234, 354);
+			this->MaxWithdrowalSumm->Margin = System::Windows::Forms::Padding(4);
+			this->MaxWithdrowalSumm->MaxLength = 32767;
+			this->MaxWithdrowalSumm->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->MaxWithdrowalSumm->Name = L"MaxWithdrowalSumm";
+			this->MaxWithdrowalSumm->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->MaxWithdrowalSumm->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->MaxWithdrowalSumm->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->MaxWithdrowalSumm->ReadOnly = false;
+			this->MaxWithdrowalSumm->Size = System::Drawing::Size(110, 48);
+			this->MaxWithdrowalSumm->TabIndex = 42;
+			this->MaxWithdrowalSumm->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->MaxWithdrowalSumm->TextName = L"50000";
 			// 
 			// jDragControl1
 			// 
@@ -526,16 +532,17 @@ namespace Diploma {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(700, 550);
 			this->Controls->Add(this->CardNumberTxt);
 			this->Controls->Add(this->UserNameTxt);
-			this->Controls->Add(this->jMetroTextBox2);
+			this->Controls->Add(this->MaxWithdrowalSumm);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->jMetroTextBox1);
+			this->Controls->Add(this->SummOfWithdrowal);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->jThinButton7);
+			this->Controls->Add(this->WithdrowalButton);
 			this->Controls->Add(this->jThinButton6);
 			this->Controls->Add(this->jThinButton5);
 			this->Controls->Add(this->jThinButton4);
@@ -560,20 +567,42 @@ namespace Diploma {
 
 		}
 #pragma endregion
+		ParametersClass^ n = gcnew ParametersClass();
+		DBFicsation f2;
+		int userBalance = Convert::ToInt32(n->Balance);
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
-
-private: System::Void Card_OutForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	
-	ParametersClass^ n = gcnew ParametersClass();
-	CardNumberTxt->TextName = Convert::ToString(n->CardNumber);
-	UserNameTxt->TextName = Convert::ToString(n->UserName);
-}
-private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	EndForm^ _EndForm2 = gcnew EndForm();
-	_EndForm2->ShowDialog();
-}
-};
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
+	private: System::Void Card_OutForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		//Using the DB user info
+		CardNumberTxt->TextName = Convert::ToString(n->CardNumber);
+		UserNameTxt->TextName = Convert::ToString(n->UserName);
+	}
+	private: System::Void WithdrowalButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt;
+		if (SummOfWithdrowal->TextName == "") {
+			MessageBox::Show("Summ can`t be empty");
+		}
+		else if (SummTxt < 50 || SummTxt > 50000) {
+			MessageBox::Show("Input summ between 50 and 50000");
+		}
+		else if (SummTxt > userBalance)
+		{
+			MessageBox::Show("Not anoutgh money on the balance");
+		} 
+		else{
+			SummTxt = Convert::ToInt32(SummOfWithdrowal->TextName);
+			f2.UpdateBalance(n, -SummTxt);
+			this->Hide();
+			EndForm^ _EndForm2 = gcnew EndForm();
+			_EndForm2->ShowDialog();
+		}
+	}
+	};
 }

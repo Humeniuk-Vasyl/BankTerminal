@@ -140,7 +140,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// exitToolStripMenuItem
@@ -162,7 +162,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// label3
@@ -179,6 +179,8 @@ namespace Diploma {
 			this->label3->TabIndex = 7;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &MainMenuPage::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &MainMenuPage::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MainMenuPage::label3_MouseMove);
 			// 
 			// panel1
 			// 
@@ -274,7 +276,7 @@ namespace Diploma {
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->BalanceFormButton->BorderColor = System::Drawing::Color::White;
 			this->BalanceFormButton->BorderRadius = 15;
-			this->BalanceFormButton->ButtonText = L"баланс та\n  виписка";
+			this->BalanceFormButton->ButtonText = L"Баланс та\n  виписка";
 			this->BalanceFormButton->Font = (gcnew System::Drawing::Font(L"Impact", 12));
 			this->BalanceFormButton->Font_Size = (gcnew System::Drawing::Font(L"Impact", 12));
 			this->BalanceFormButton->ForeColors = System::Drawing::SystemColors::ControlLight;
@@ -402,6 +404,7 @@ namespace Diploma {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(700, 550);
 			this->Controls->Add(this->ChangePIN_CodeOrPhone);
 			this->Controls->Add(this->ConversionFormButton);
@@ -429,6 +432,12 @@ namespace Diploma {
 
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
+	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
 	private: System::Void ReplanishmentFormButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
@@ -466,5 +475,6 @@ namespace Diploma {
 		_ConversionForm1->ShowDialog();							  // going to Conversion n Buy/Sale
 	}
 
-	};
+
+};
 }

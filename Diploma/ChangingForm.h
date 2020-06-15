@@ -207,6 +207,8 @@ namespace Diploma {
 			this->label3->TabIndex = 8;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &ChangingForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &ChangingForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &ChangingForm::label3_MouseMove);
 			// 
 			// ChangePIN_codeButton
 			// 
@@ -276,7 +278,7 @@ namespace Diploma {
 			this->NewNumberTxt->BackColor = System::Drawing::Color::Transparent;
 			this->NewNumberTxt->BorderColor = System::Drawing::Color::Empty;
 			this->NewNumberTxt->BorderRadius = 20;
-			this->NewNumberTxt->FillColor = System::Drawing::SystemColors::Control;
+			this->NewNumberTxt->FillColor = System::Drawing::Color::White;
 			this->NewNumberTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->NewNumberTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->NewNumberTxt->ForeColors = System::Drawing::Color::Gray;
@@ -301,7 +303,7 @@ namespace Diploma {
 			this->ReNewNumberTxt->BackColor = System::Drawing::Color::Transparent;
 			this->ReNewNumberTxt->BorderColor = System::Drawing::Color::Empty;
 			this->ReNewNumberTxt->BorderRadius = 20;
-			this->ReNewNumberTxt->FillColor = System::Drawing::SystemColors::Control;
+			this->ReNewNumberTxt->FillColor = System::Drawing::Color::White;
 			this->ReNewNumberTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ReNewNumberTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ReNewNumberTxt->ForeColors = System::Drawing::Color::Gray;
@@ -326,7 +328,7 @@ namespace Diploma {
 			this->NewPINTxt->BackColor = System::Drawing::Color::Transparent;
 			this->NewPINTxt->BorderColor = System::Drawing::Color::Empty;
 			this->NewPINTxt->BorderRadius = 20;
-			this->NewPINTxt->FillColor = System::Drawing::SystemColors::Control;
+			this->NewPINTxt->FillColor = System::Drawing::Color::White;
 			this->NewPINTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->NewPINTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->NewPINTxt->ForeColors = System::Drawing::Color::Gray;
@@ -351,7 +353,7 @@ namespace Diploma {
 			this->OldPINTxt1->BackColor = System::Drawing::Color::Transparent;
 			this->OldPINTxt1->BorderColor = System::Drawing::Color::Empty;
 			this->OldPINTxt1->BorderRadius = 20;
-			this->OldPINTxt1->FillColor = System::Drawing::SystemColors::Control;
+			this->OldPINTxt1->FillColor = System::Drawing::Color::White;
 			this->OldPINTxt1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->OldPINTxt1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->OldPINTxt1->ForeColors = System::Drawing::Color::Gray;
@@ -415,7 +417,7 @@ namespace Diploma {
 			this->ReNewPINTxt->BackColor = System::Drawing::Color::Transparent;
 			this->ReNewPINTxt->BorderColor = System::Drawing::Color::Empty;
 			this->ReNewPINTxt->BorderRadius = 20;
-			this->ReNewPINTxt->FillColor = System::Drawing::SystemColors::Control;
+			this->ReNewPINTxt->FillColor = System::Drawing::Color::White;
 			this->ReNewPINTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ReNewPINTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ReNewPINTxt->ForeColors = System::Drawing::Color::Gray;
@@ -505,24 +507,25 @@ namespace Diploma {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
 	private: System::Void ChangePIN_codeButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (NewPINTxt->TextName == "" || ReNewPINTxt->TextName == "" || OldPINTxt1->TextName == "")
-		{
-			MessageBox::Show("Please fill all data");
-		}
-		if (OldPINTxt1->TextName != n->PIN_Code)
-		{
-			MessageBox::Show("Incorect old PIN-code");
-		}
+		if (NewPINTxt->TextName == "" || ReNewPINTxt->TextName == "" || OldPINTxt1->TextName == ""){
+			MessageBox::Show("Please fill all data");}
+		if (OldPINTxt1->TextName != n->PIN_Code){
+			MessageBox::Show("Incorect old PIN-code");}
 		else if (NewPINTxt->TextName != ReNewPINTxt->TextName) {
-			MessageBox::Show("PIN-codes don't match");
-		}
-		else
-		{
-			// Update PIN-code Funcition
-			this->Hide();
-			EndForm^ _EndForm1 = gcnew EndForm();
-			_EndForm1->ShowDialog();
+			MessageBox::Show("PIN-codes don't match");}
+		else{
+			int NewPIN_Code = Convert::ToInt32(NewPINTxt->TextName);
+			//UpdatePIN_Code(NewPIN_Code);			// Updating user PIN_code
+			this->Hide();							// hiding changing form
+			EndForm^ _EndForm1 = gcnew EndForm();	// creating End Form
+			_EndForm1->ShowDialog();				// showing End Form Like Dialog icon
 		}
 	}
 	private: System::Void ChangePhoneNumberButton_Click(System::Object^ sender, System::EventArgs^ e) {

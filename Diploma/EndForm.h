@@ -139,6 +139,8 @@ namespace Diploma {
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &EndForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &EndForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &EndForm::label3_MouseMove);
 			// 
 			// panel1
 			// 
@@ -237,6 +239,7 @@ namespace Diploma {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(600, 488);
 			this->Controls->Add(this->EndButton);
 			this->Controls->Add(this->MainMenuButton);
@@ -262,6 +265,12 @@ namespace Diploma {
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
+	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
 	private: System::Void jThinButton2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

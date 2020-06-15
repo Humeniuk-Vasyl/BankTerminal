@@ -163,6 +163,8 @@ namespace Diploma {
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &ConversionForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &ConversionForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &ConversionForm::label3_MouseMove);
 			// 
 			// menuStrip1
 			// 
@@ -260,7 +262,7 @@ namespace Diploma {
 			this->ÑurrencyNumber2->BorderColor = System::Drawing::Color::Empty;
 			this->ÑurrencyNumber2->BorderRadius = 20;
 			this->ÑurrencyNumber2->Enabled = false;
-			this->ÑurrencyNumber2->FillColor = System::Drawing::SystemColors::Window;
+			this->ÑurrencyNumber2->FillColor = System::Drawing::Color::White;
 			this->ÑurrencyNumber2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ÑurrencyNumber2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ÑurrencyNumber2->ForeColors = System::Drawing::Color::Gray;
@@ -285,7 +287,7 @@ namespace Diploma {
 			this->ÑurrencyNumber1->BackColor = System::Drawing::Color::Transparent;
 			this->ÑurrencyNumber1->BorderColor = System::Drawing::Color::Empty;
 			this->ÑurrencyNumber1->BorderRadius = 20;
-			this->ÑurrencyNumber1->FillColor = System::Drawing::SystemColors::Window;
+			this->ÑurrencyNumber1->FillColor = System::Drawing::Color::White;
 			this->ÑurrencyNumber1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ÑurrencyNumber1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->ÑurrencyNumber1->ForeColors = System::Drawing::Color::Gray;
@@ -365,7 +367,7 @@ namespace Diploma {
 			this->jMetroTextBox3->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox3->BorderRadius = 10;
 			this->jMetroTextBox3->Enabled = false;
-			this->jMetroTextBox3->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox3->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox3->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox3->ForeColors = System::Drawing::Color::Gray;
@@ -391,7 +393,7 @@ namespace Diploma {
 			this->jMetroTextBox4->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox4->BorderRadius = 10;
 			this->jMetroTextBox4->Enabled = false;
-			this->jMetroTextBox4->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox4->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox4->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox4->ForeColors = System::Drawing::Color::Gray;
@@ -461,7 +463,7 @@ namespace Diploma {
 			this->jMetroTextBox5->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox5->BorderRadius = 10;
 			this->jMetroTextBox5->Enabled = false;
-			this->jMetroTextBox5->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox5->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox5->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox5->ForeColors = System::Drawing::Color::Gray;
@@ -487,7 +489,7 @@ namespace Diploma {
 			this->jMetroTextBox6->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox6->BorderRadius = 10;
 			this->jMetroTextBox6->Enabled = false;
-			this->jMetroTextBox6->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox6->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox6->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox6->ForeColors = System::Drawing::Color::Gray;
@@ -535,7 +537,7 @@ namespace Diploma {
 			this->jMetroTextBox7->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox7->BorderRadius = 10;
 			this->jMetroTextBox7->Enabled = false;
-			this->jMetroTextBox7->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox7->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox7->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox7->ForeColors = System::Drawing::Color::Gray;
@@ -561,7 +563,7 @@ namespace Diploma {
 			this->jMetroTextBox8->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox8->BorderRadius = 10;
 			this->jMetroTextBox8->Enabled = false;
-			this->jMetroTextBox8->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox8->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox8->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox8->ForeColors = System::Drawing::Color::Gray;
@@ -609,7 +611,7 @@ namespace Diploma {
 			this->jMetroTextBox9->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox9->BorderRadius = 10;
 			this->jMetroTextBox9->Enabled = false;
-			this->jMetroTextBox9->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox9->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox9->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox9->ForeColors = System::Drawing::Color::Gray;
@@ -635,7 +637,7 @@ namespace Diploma {
 			this->jMetroTextBox10->BorderColor = System::Drawing::Color::Empty;
 			this->jMetroTextBox10->BorderRadius = 10;
 			this->jMetroTextBox10->Enabled = false;
-			this->jMetroTextBox10->FillColor = System::Drawing::SystemColors::Window;
+			this->jMetroTextBox10->FillColor = System::Drawing::Color::White;
 			this->jMetroTextBox10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox10->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->jMetroTextBox10->ForeColors = System::Drawing::Color::Gray;
@@ -716,6 +718,7 @@ namespace Diploma {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(700, 584);
 			this->Controls->Add(this->AdditionallyButton);
 			this->Controls->Add(this->CalculateButton);
@@ -754,10 +757,17 @@ namespace Diploma {
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
+	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
 	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

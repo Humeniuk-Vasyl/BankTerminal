@@ -1,6 +1,8 @@
 #pragma once
 #include <stdlib.h>
 #include "EndForm.h"
+#include "ParametersClass.h"
+#include "DBFicsation.h"
 
 namespace Diploma {
 
@@ -64,8 +66,9 @@ namespace Diploma {
 
 	private: System::Windows::Forms::Label^ label7;
 	private: ::JMetroTextBox::JMetroTextBox^ PercentageRate;
+	private: ::JThinButton::JThinButton^ DepositButton;
 
-	private: ::JThinButton::JThinButton^ jThinButton7;
+
 	private: ::JMetroTextBox::JMetroTextBox^ DepositMaxSumm;
 
 
@@ -115,7 +118,7 @@ namespace Diploma {
 			this->DepositMinSumm = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->PercentageRate = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jThinButton7 = (gcnew ::JThinButton::JThinButton());
+			this->DepositButton = (gcnew ::JThinButton::JThinButton());
 			this->DepositMaxSumm = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
@@ -139,6 +142,8 @@ namespace Diploma {
 			this->label3->TabIndex = 11;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &DepositForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &DepositForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &DepositForm::label3_MouseMove);
 			// 
 			// menuStrip1
 			// 
@@ -309,7 +314,7 @@ namespace Diploma {
 			this->TermNumber->BorderColor = System::Drawing::SystemColors::Highlight;
 			this->TermNumber->BorderRadius = 20;
 			this->TermNumber->Enabled = false;
-			this->TermNumber->FillColor = System::Drawing::SystemColors::Window;
+			this->TermNumber->FillColor = System::Drawing::Color::White;
 			this->TermNumber->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->TermNumber->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->TermNumber->ForeColors = System::Drawing::Color::Gray;
@@ -425,31 +430,31 @@ namespace Diploma {
 			this->PercentageRate->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->PercentageRate->TextName = L"Name";
 			// 
-			// jThinButton7
+			// DepositButton
 			// 
-			this->jThinButton7->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton7->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->DepositButton->BackColor = System::Drawing::Color::Transparent;
+			this->DepositButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->BorderColor = System::Drawing::Color::White;
-			this->jThinButton7->BorderRadius = 23;
-			this->jThinButton7->ButtonText = L"нтнплхрх деонгхр";
-			this->jThinButton7->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DepositButton->BorderColor = System::Drawing::Color::White;
+			this->DepositButton->BorderRadius = 23;
+			this->DepositButton->ButtonText = L"нтнплхрх деонгхр";
+			this->DepositButton->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->jThinButton7->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DepositButton->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->jThinButton7->ForeColors = System::Drawing::Color::Silver;
-			this->jThinButton7->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->DepositButton->ForeColors = System::Drawing::Color::Silver;
+			this->DepositButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+			this->DepositButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton7->LineThickness = 2;
-			this->jThinButton7->Location = System::Drawing::Point(375, 502);
-			this->jThinButton7->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton7->Name = L"jThinButton7";
-			this->jThinButton7->Size = System::Drawing::Size(304, 52);
-			this->jThinButton7->TabIndex = 54;
-			this->jThinButton7->Click += gcnew System::EventHandler(this, &DepositForm::jThinButton7_Click);
+			this->DepositButton->HoverFontColor = System::Drawing::Color::White;
+			this->DepositButton->LineThickness = 2;
+			this->DepositButton->Location = System::Drawing::Point(375, 502);
+			this->DepositButton->Margin = System::Windows::Forms::Padding(4);
+			this->DepositButton->Name = L"DepositButton";
+			this->DepositButton->Size = System::Drawing::Size(304, 52);
+			this->DepositButton->TabIndex = 54;
+			this->DepositButton->Click += gcnew System::EventHandler(this, &DepositForm::DepositButton_Click);
 			// 
 			// DepositMaxSumm
 			// 
@@ -457,7 +462,7 @@ namespace Diploma {
 			this->DepositMaxSumm->BorderColor = System::Drawing::Color::Empty;
 			this->DepositMaxSumm->BorderRadius = 10;
 			this->DepositMaxSumm->Enabled = false;
-			this->DepositMaxSumm->FillColor = System::Drawing::SystemColors::Window;
+			this->DepositMaxSumm->FillColor = System::Drawing::Color::White;
 			this->DepositMaxSumm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->DepositMaxSumm->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
 			this->DepositMaxSumm->ForeColors = System::Drawing::Color::Gray;
@@ -543,12 +548,13 @@ namespace Diploma {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(700, 584);
 			this->Controls->Add(this->MinusTerm);
 			this->Controls->Add(this->PlusTerm);
 			this->Controls->Add(this->DepositMaxSumm);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->jThinButton7);
+			this->Controls->Add(this->DepositButton);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->PercentageRate);
 			this->Controls->Add(this->label5);
@@ -567,6 +573,7 @@ namespace Diploma {
 			this->Name = L"DepositForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"DepositForm";
+			this->Load += gcnew System::EventHandler(this, &DepositForm::DepositForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->panel1->ResumeLayout(false);
@@ -576,27 +583,24 @@ namespace Diploma {
 
 		}
 #pragma endregion
+		ParametersClass^ n = gcnew ParametersClass();
+		DBFicsation f5;
+	private: System::Void DepositForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		ClientCardNumber->TextName = n->CardNumber;
+
+	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
+	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
 	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
-		int summ1 = Convert::ToInt32(DepositSumm->TextName);
-		if (summ1 < 100 || summ1> 20000 || summ1 % 100 != 0)
-		{
-			MessageBox::Show("Please input correct number");
-			summ1 = 1000;
-			DepositSumm->TextName = Convert::ToString(summ1);
-
-		}
-		//MessageBox();
-		this->Hide();
-		EndForm^ _EndForm5 = gcnew EndForm();
-		_EndForm5->ShowDialog();
-	}
-
 	private: System::Void MinusTerm_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (TermNumber->TextName != "1") {
 			int temp1 = Convert::ToInt32(TermNumber->TextName);
@@ -650,5 +654,20 @@ namespace Diploma {
 			PercentageRate->TextName = "13 % ";
 		}
 	}
-	};
+	private: System::Void DepositButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		int summ1 = Convert::ToInt32(DepositSumm->TextName);
+		if (summ1 < 100 || summ1> 20000 || summ1 % 100 != 0)
+		{
+			MessageBox::Show("Please input correct number");
+			summ1 = 1000;
+			DepositSumm->TextName = Convert::ToString(summ1);
+
+		}
+		//MessageBox();
+		this->Hide();
+		EndForm^ _EndForm5 = gcnew EndForm();
+		_EndForm5->ShowDialog();
+	}
+
+};
 }
