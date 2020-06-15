@@ -1,6 +1,7 @@
 #pragma once
 #include "EndForm.h"
 #include "ParametersClass.h"
+#include "DBFicsation.h"
 #include <stdlib.h>
 namespace Diploma {
 
@@ -504,6 +505,7 @@ namespace Diploma {
 		}
 #pragma endregion
 		ParametersClass^ n = gcnew ParametersClass();
+		DBFicsation f6;
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 		exit(0);
 	}
@@ -522,7 +524,7 @@ namespace Diploma {
 			MessageBox::Show("PIN-codes don't match");}
 		else{
 			int NewPIN_Code = Convert::ToInt32(NewPINTxt->TextName);
-			//UpdatePIN_Code(NewPIN_Code);			// Updating user PIN_code
+			f6.UpdatePIN_Code(n, NewPINTxt->TextName);// Updating user PIN_code
 			this->Hide();							// hiding changing form
 			EndForm^ _EndForm1 = gcnew EndForm();	// creating End Form
 			_EndForm1->ShowDialog();				// showing End Form Like Dialog icon
@@ -538,7 +540,7 @@ namespace Diploma {
 			MessageBox::Show("Incorect old PIN-code");
 		}
 		else if (NewNumberTxt->TextName == ReNewNumberTxt->TextName) {
-			// Update Phone Number Funcition
+			f6.UpdatePhoneNumber(n, NewNumberTxt->TextName);
 			this->Hide();
 			EndForm^ _EndForm1 = gcnew EndForm();
 			_EndForm1->ShowDialog();

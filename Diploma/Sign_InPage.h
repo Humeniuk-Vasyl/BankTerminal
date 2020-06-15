@@ -447,10 +447,10 @@ namespace Diploma {
 			_LogInPage1->Show();
 		}
 	}
-private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	Log_InPage^ _LogInPage1 = gcnew Log_InPage();
-	_LogInPage1->Show();
-}
-};
+	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		Log_InPage^ _LogInPage1_1 = gcnew Log_InPage();
+		_LogInPage1_1->Show();
+	}
+	};
 }

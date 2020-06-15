@@ -183,5 +183,43 @@ public: void UpdateDeposit(ParametersClass^ n, int SummTxt) {
 		// Completed
 	}
 }
+public: void UpdatePIN_Code(ParametersClass^ n, String^ NewPIN_Code) {
+	try {
+		// Connection to DB
+		ConnectToDB();
+
+		String^ cmdText3 = "Update dbo.Clients SET PIN_Code = @PIN_Code Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
+		SqlCommand^ cmd3 = gcnew SqlCommand(cmdText3, conn);
+		cmd3->Parameters->AddWithValue("@PIN_Code", NewPIN_Code);
+		conn->Open();
+		cmd3->ExecuteNonQuery();
+	}
+	finally {
+		if (conn != nullptr)
+		{
+			conn->Close();
+		}
+		// Completed
+	}
+}
+public: void UpdatePhoneNumber(ParametersClass^ n, String^ NewPhoneNumber) {
+	try {
+		// Connection to DB
+		ConnectToDB();
+
+		String^ cmdText4 = "Update dbo.Clients SET PhoneNumber = @PhoneNumber Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
+		SqlCommand^ cmd4 = gcnew SqlCommand(cmdText4, conn);
+		cmd4->Parameters->AddWithValue("@PhoneNumber", NewPhoneNumber);
+		conn->Open();
+		cmd4->ExecuteNonQuery();
+	}
+	finally {
+		if (conn != nullptr)
+		{
+			conn->Close();
+		}
+		// Completed
+	}
+}
 
 };
