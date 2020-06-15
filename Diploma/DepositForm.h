@@ -626,9 +626,9 @@ namespace Diploma {
 		if (TermStat == 12) {
 			PercentageRate->TextName = "13 % ";
 		}
-		
+
 	}
-	private: System::Void PlusTerm_Click(System::Object^ sender, System::EventArgs^ e) {	
+	private: System::Void PlusTerm_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (TermNumber->TextName != "12") {
 			int temp2 = Convert::ToInt32(TermNumber->TextName);
 			temp2++;
@@ -655,19 +655,38 @@ namespace Diploma {
 		}
 	}
 	private: System::Void DepositButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		int summ1 = Convert::ToInt32(DepositSumm->TextName);
-		if (summ1 < 100 || summ1> 20000 || summ1 % 100 != 0)
+		int SummTxt;
+		try
 		{
-			MessageBox::Show("Please input correct number");
-			summ1 = 1000;
-			DepositSumm->TextName = Convert::ToString(summ1);
-
+			SummTxt = Convert::ToInt32(DepositSumm->TextName);
 		}
-		//MessageBox();
-		this->Hide();
-		EndForm^ _EndForm5 = gcnew EndForm();
-		_EndForm5->ShowDialog();
+		catch (const System::FormatException^ ex) {
+			MessageBox::Show("Incorect format!");
+		}
+		if (DepositSumm->TextName == "") {
+			MessageBox::Show("Summ can`t be empty");
+		}
+		if (DepositSumm->TextName != "") {
+
+			SummTxt = Convert::ToInt32(DepositSumm->TextName);
+		}
+		if (SummTxt > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		if (SummTxt < 1000 || SummTxt > 20000 || SummTxt % 100 != 0) {
+			MessageBox::Show("Input summ between 1000 and 20000 and multiple of 100");
+		}
+		else {
+			int summ1 = Convert::ToInt32(DepositSumm->TextName);
+			//MessageBox();
+			f5.UpdateBalance(n, -summ1);
+			f5.UpdateDeposit(n, summ1);
+			this->Hide();
+			EndForm^ _EndForm5 = gcnew EndForm();
+			_EndForm5->ShowDialog();
+		}
 	}
 
-};
+	};
 }

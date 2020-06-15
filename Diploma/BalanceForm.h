@@ -1,6 +1,7 @@
 #pragma once
 #include <stdlib.h>
 #include "EndForm.h"
+#include "ParametersClass.h"
 
 namespace Diploma {
 
@@ -45,11 +46,15 @@ namespace Diploma {
 	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label1;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox2;
-	private: ::JMetroTextBox::JMetroTextBox^ jMetroTextBox1;
+	private: ::JMetroTextBox::JMetroTextBox^ DepositTxt;
+
+	private: ::JMetroTextBox::JMetroTextBox^ BalanceTxt;
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
-	private: ::JThinButton::JThinButton^ jThinButton7;
+	private: ::JThinButton::JThinButton^ GetCheckButton;
+
+
 	private: ::JDragControl::JDragControl^ jDragControl1;
 	private: System::ComponentModel::IContainer^ components;
 
@@ -75,11 +80,11 @@ namespace Diploma {
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->jMetroTextBox2 = (gcnew ::JMetroTextBox::JMetroTextBox());
-			this->jMetroTextBox1 = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->DepositTxt = (gcnew ::JMetroTextBox::JMetroTextBox());
+			this->BalanceTxt = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->jThinButton7 = (gcnew ::JThinButton::JThinButton());
+			this->GetCheckButton = (gcnew ::JThinButton::JThinButton());
 			this->jDragControl1 = (gcnew ::JDragControl::JDragControl(this->components));
 			this->menuStrip1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -99,6 +104,8 @@ namespace Diploma {
 			this->label3->TabIndex = 11;
 			this->label3->Text = L"X";
 			this->label3->Click += gcnew System::EventHandler(this, &BalanceForm::label3_Click);
+			this->label3->MouseLeave += gcnew System::EventHandler(this, &BalanceForm::label3_MouseLeave);
+			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &BalanceForm::label3_MouseMove);
 			// 
 			// menuStrip1
 			// 
@@ -186,55 +193,57 @@ namespace Diploma {
 			this->label1->TabIndex = 40;
 			this->label1->Text = L"ВАШ БАЛАНС";
 			// 
-			// jMetroTextBox2
+			// DepositTxt
 			// 
-			this->jMetroTextBox2->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox2->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox2->BorderRadius = 20;
-			this->jMetroTextBox2->FillColor = System::Drawing::SystemColors::Window;
-			this->jMetroTextBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox2->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox2->IsPassword = false;
-			this->jMetroTextBox2->LineThickness = 2;
-			this->jMetroTextBox2->Location = System::Drawing::Point(177, 334);
-			this->jMetroTextBox2->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox2->MaxLength = 32767;
-			this->jMetroTextBox2->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox2->Name = L"jMetroTextBox2";
-			this->jMetroTextBox2->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox2->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox2->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox2->ReadOnly = false;
-			this->jMetroTextBox2->Size = System::Drawing::Size(323, 78);
-			this->jMetroTextBox2->TabIndex = 39;
-			this->jMetroTextBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox2->TextName = L"";
+			this->DepositTxt->BackColor = System::Drawing::Color::Transparent;
+			this->DepositTxt->BorderColor = System::Drawing::Color::Empty;
+			this->DepositTxt->BorderRadius = 20;
+			this->DepositTxt->Enabled = false;
+			this->DepositTxt->FillColor = System::Drawing::Color::White;
+			this->DepositTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->DepositTxt->ForeColors = System::Drawing::Color::Gray;
+			this->DepositTxt->IsPassword = false;
+			this->DepositTxt->LineThickness = 2;
+			this->DepositTxt->Location = System::Drawing::Point(177, 334);
+			this->DepositTxt->Margin = System::Windows::Forms::Padding(4);
+			this->DepositTxt->MaxLength = 32767;
+			this->DepositTxt->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->DepositTxt->Name = L"DepositTxt";
+			this->DepositTxt->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->DepositTxt->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->DepositTxt->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->DepositTxt->ReadOnly = false;
+			this->DepositTxt->Size = System::Drawing::Size(323, 78);
+			this->DepositTxt->TabIndex = 39;
+			this->DepositTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->DepositTxt->TextName = L"";
 			// 
-			// jMetroTextBox1
+			// BalanceTxt
 			// 
-			this->jMetroTextBox1->BackColor = System::Drawing::Color::Transparent;
-			this->jMetroTextBox1->BorderColor = System::Drawing::Color::Empty;
-			this->jMetroTextBox1->BorderRadius = 20;
-			this->jMetroTextBox1->FillColor = System::Drawing::SystemColors::Window;
-			this->jMetroTextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
-			this->jMetroTextBox1->ForeColors = System::Drawing::Color::Gray;
-			this->jMetroTextBox1->IsPassword = false;
-			this->jMetroTextBox1->LineThickness = 2;
-			this->jMetroTextBox1->Location = System::Drawing::Point(177, 210);
-			this->jMetroTextBox1->Margin = System::Windows::Forms::Padding(4);
-			this->jMetroTextBox1->MaxLength = 32767;
-			this->jMetroTextBox1->MouseOnHover = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox1->Name = L"jMetroTextBox1";
-			this->jMetroTextBox1->OnCursor = System::Windows::Forms::Cursors::IBeam;
-			this->jMetroTextBox1->OnFocusColor = System::Drawing::Color::DarkGray;
-			this->jMetroTextBox1->OnFocusFontColor = System::Drawing::Color::Gray;
-			this->jMetroTextBox1->ReadOnly = false;
-			this->jMetroTextBox1->Size = System::Drawing::Size(323, 78);
-			this->jMetroTextBox1->TabIndex = 38;
-			this->jMetroTextBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->jMetroTextBox1->TextName = L"";
+			this->BalanceTxt->BackColor = System::Drawing::Color::Transparent;
+			this->BalanceTxt->BorderColor = System::Drawing::Color::Empty;
+			this->BalanceTxt->BorderRadius = 20;
+			this->BalanceTxt->Enabled = false;
+			this->BalanceTxt->FillColor = System::Drawing::Color::White;
+			this->BalanceTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->BalanceTxt->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F));
+			this->BalanceTxt->ForeColors = System::Drawing::Color::Gray;
+			this->BalanceTxt->IsPassword = false;
+			this->BalanceTxt->LineThickness = 2;
+			this->BalanceTxt->Location = System::Drawing::Point(177, 210);
+			this->BalanceTxt->Margin = System::Windows::Forms::Padding(4);
+			this->BalanceTxt->MaxLength = 32767;
+			this->BalanceTxt->MouseOnHover = System::Drawing::Color::DarkGray;
+			this->BalanceTxt->Name = L"BalanceTxt";
+			this->BalanceTxt->OnCursor = System::Windows::Forms::Cursors::IBeam;
+			this->BalanceTxt->OnFocusColor = System::Drawing::Color::DarkGray;
+			this->BalanceTxt->OnFocusFontColor = System::Drawing::Color::Gray;
+			this->BalanceTxt->ReadOnly = false;
+			this->BalanceTxt->Size = System::Drawing::Size(323, 78);
+			this->BalanceTxt->TabIndex = 38;
+			this->BalanceTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->BalanceTxt->TextName = L"";
 			// 
 			// panel1
 			// 
@@ -262,31 +271,31 @@ namespace Diploma {
 			this->label2->Text = L"BALANCE AND EXTRACT";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// jThinButton7
+			// GetCheckButton
 			// 
-			this->jThinButton7->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton7->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->GetCheckButton->BackColor = System::Drawing::Color::Transparent;
+			this->GetCheckButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->BorderColor = System::Drawing::Color::White;
-			this->jThinButton7->BorderRadius = 23;
-			this->jThinButton7->ButtonText = L"Отримати виписку";
-			this->jThinButton7->Font = (gcnew System::Drawing::Font(L"Verdana", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->GetCheckButton->BorderColor = System::Drawing::Color::White;
+			this->GetCheckButton->BorderRadius = 23;
+			this->GetCheckButton->ButtonText = L"Отримати виписку";
+			this->GetCheckButton->Font = (gcnew System::Drawing::Font(L"Verdana", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton7->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->GetCheckButton->Font_Size = (gcnew System::Drawing::Font(L"Verdana", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->jThinButton7->ForeColors = System::Drawing::SystemColors::ControlLight;
-			this->jThinButton7->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
+			this->GetCheckButton->ForeColors = System::Drawing::SystemColors::ControlLight;
+			this->GetCheckButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
+			this->GetCheckButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			this->jThinButton7->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton7->LineThickness = 2;
-			this->jThinButton7->Location = System::Drawing::Point(187, 431);
-			this->jThinButton7->Margin = System::Windows::Forms::Padding(4);
-			this->jThinButton7->Name = L"jThinButton7";
-			this->jThinButton7->Size = System::Drawing::Size(304, 79);
-			this->jThinButton7->TabIndex = 42;
-			this->jThinButton7->Click += gcnew System::EventHandler(this, &BalanceForm::jThinButton7_Click);
+			this->GetCheckButton->HoverFontColor = System::Drawing::Color::White;
+			this->GetCheckButton->LineThickness = 2;
+			this->GetCheckButton->Location = System::Drawing::Point(187, 431);
+			this->GetCheckButton->Margin = System::Windows::Forms::Padding(4);
+			this->GetCheckButton->Name = L"GetCheckButton";
+			this->GetCheckButton->Size = System::Drawing::Size(304, 79);
+			this->GetCheckButton->TabIndex = 42;
+			this->GetCheckButton->Click += gcnew System::EventHandler(this, &BalanceForm::GetCheckButton_Click);
 			// 
 			// jDragControl1
 			// 
@@ -299,11 +308,11 @@ namespace Diploma {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(682, 537);
-			this->Controls->Add(this->jThinButton7);
+			this->Controls->Add(this->GetCheckButton);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->jMetroTextBox2);
-			this->Controls->Add(this->jMetroTextBox1);
+			this->Controls->Add(this->DepositTxt);
+			this->Controls->Add(this->BalanceTxt);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->menuStrip1);
@@ -311,6 +320,7 @@ namespace Diploma {
 			this->Name = L"BalanceForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BalanceForm";
+			this->Load += gcnew System::EventHandler(this, &BalanceForm::BalanceForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->panel1->ResumeLayout(false);
@@ -320,20 +330,31 @@ namespace Diploma {
 
 		}
 #pragma endregion
-	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*this->Close();
-		Log_InPage^ _Log_InPage1 = gcnew Log_InPage();
-		_Log_InPage1->Show();*/
+		ParametersClass^ n = gcnew ParametersClass();
+	private: System::Void BalanceForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		BalanceTxt->TextName = n->Balance;
+		DepositTxt->TextName = n->Deposit;
 	}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-	exit(0);
-}
+	private: System::Void mainMenuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+		exit(0);
+	}
+	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Tomato;
+	}
+	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
+	}
+	private: System::Void GetCheckButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ DATA = "HELLO " + n->UserName + "!\nCard number: " + n->CardNumber + "\nPIN-code: " + n->PIN_Code + "\nYour current Balance is: " + n->Balance + "\nYour current Deposit is: " + n->Deposit + "\nGood using!";
+		MessageBox::Show(DATA);
+		this->Hide();
+		EndForm^ _EndForm3 = gcnew EndForm();
+		_EndForm3->ShowDialog();
+	}
 
-private: System::Void jThinButton7_Click(System::Object^ sender, System::EventArgs^ e) {
-	//MessageBox();
-	this->Hide();
-	EndForm^ _EndForm3 = gcnew EndForm();
-	_EndForm3->ShowDialog();
-}
-};
+
+	};
 }

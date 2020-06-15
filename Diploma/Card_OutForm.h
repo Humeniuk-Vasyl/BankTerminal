@@ -48,13 +48,19 @@ namespace Diploma {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: ::JThinButton::JThinButton^ WithdrowalButton;
+	private: ::JThinButton::JThinButton^ Button2000;
 
-	private: ::JThinButton::JThinButton^ jThinButton6;
-	private: ::JThinButton::JThinButton^ jThinButton5;
-	private: ::JThinButton::JThinButton^ jThinButton4;
-	private: ::JThinButton::JThinButton^ jThinButton3;
-	private: ::JThinButton::JThinButton^ jThinButton2;
-	private: ::JThinButton::JThinButton^ jThinButton1;
+
+	private: ::JThinButton::JThinButton^ Button1000;
+
+	private: ::JThinButton::JThinButton^ Button500;
+
+	private: ::JThinButton::JThinButton^ Button200;
+
+	private: ::JThinButton::JThinButton^ Button100;
+
+	private: ::JThinButton::JThinButton^ Button50;
+
 	private: ::JMetroTextBox::JMetroTextBox^ SummOfWithdrowal;
 
 	private: System::Windows::Forms::Label^ label1;
@@ -95,12 +101,12 @@ namespace Diploma {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->WithdrowalButton = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton6 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton5 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton4 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton3 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton2 = (gcnew ::JThinButton::JThinButton());
-			this->jThinButton1 = (gcnew ::JThinButton::JThinButton());
+			this->Button2000 = (gcnew ::JThinButton::JThinButton());
+			this->Button1000 = (gcnew ::JThinButton::JThinButton());
+			this->Button500 = (gcnew ::JThinButton::JThinButton());
+			this->Button200 = (gcnew ::JThinButton::JThinButton());
+			this->Button100 = (gcnew ::JThinButton::JThinButton());
+			this->Button50 = (gcnew ::JThinButton::JThinButton());
 			this->SummOfWithdrowal = (gcnew ::JMetroTextBox::JMetroTextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -243,137 +249,143 @@ namespace Diploma {
 			this->WithdrowalButton->TabIndex = 36;
 			this->WithdrowalButton->Click += gcnew System::EventHandler(this, &Card_OutForm::WithdrowalButton_Click);
 			// 
-			// jThinButton6
+			// Button2000
 			// 
-			this->jThinButton6->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->jThinButton6->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton6->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton6->BorderColor = System::Drawing::Color::White;
-			this->jThinButton6->BorderRadius = 15;
-			this->jThinButton6->ButtonText = L"2000";
-			this->jThinButton6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton6->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton6->ForeColors = System::Drawing::SystemColors::Info;
-			this->jThinButton6->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton6->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton6->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton6->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton6->LineThickness = 2;
-			this->jThinButton6->Location = System::Drawing::Point(528, 368);
-			this->jThinButton6->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
-			this->jThinButton6->Name = L"jThinButton6";
-			this->jThinButton6->Size = System::Drawing::Size(150, 110);
-			this->jThinButton6->TabIndex = 35;
+			this->Button2000->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Button2000->BackColor = System::Drawing::Color::Transparent;
+			this->Button2000->BackgroundColor = System::Drawing::Color::Coral;
+			this->Button2000->BorderColor = System::Drawing::Color::White;
+			this->Button2000->BorderRadius = 15;
+			this->Button2000->ButtonText = L"2000";
+			this->Button2000->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button2000->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button2000->ForeColors = System::Drawing::SystemColors::Info;
+			this->Button2000->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->Button2000->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->Button2000->HoverFontColor = System::Drawing::Color::White;
+			this->Button2000->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Button2000->LineThickness = 2;
+			this->Button2000->Location = System::Drawing::Point(528, 368);
+			this->Button2000->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
+			this->Button2000->Name = L"Button2000";
+			this->Button2000->Size = System::Drawing::Size(150, 110);
+			this->Button2000->TabIndex = 35;
+			this->Button2000->Click += gcnew System::EventHandler(this, &Card_OutForm::Button2000_Click);
 			// 
-			// jThinButton5
+			// Button1000
 			// 
-			this->jThinButton5->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->jThinButton5->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton5->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton5->BorderColor = System::Drawing::Color::White;
-			this->jThinButton5->BorderRadius = 15;
-			this->jThinButton5->ButtonText = L"1000";
-			this->jThinButton5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton5->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton5->ForeColors = System::Drawing::SystemColors::Info;
-			this->jThinButton5->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton5->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton5->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton5->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton5->LineThickness = 2;
-			this->jThinButton5->Location = System::Drawing::Point(374, 368);
-			this->jThinButton5->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
-			this->jThinButton5->Name = L"jThinButton5";
-			this->jThinButton5->Size = System::Drawing::Size(150, 110);
-			this->jThinButton5->TabIndex = 34;
+			this->Button1000->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Button1000->BackColor = System::Drawing::Color::Transparent;
+			this->Button1000->BackgroundColor = System::Drawing::Color::Coral;
+			this->Button1000->BorderColor = System::Drawing::Color::White;
+			this->Button1000->BorderRadius = 15;
+			this->Button1000->ButtonText = L"1000";
+			this->Button1000->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button1000->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button1000->ForeColors = System::Drawing::SystemColors::Info;
+			this->Button1000->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->Button1000->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->Button1000->HoverFontColor = System::Drawing::Color::White;
+			this->Button1000->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Button1000->LineThickness = 2;
+			this->Button1000->Location = System::Drawing::Point(374, 368);
+			this->Button1000->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
+			this->Button1000->Name = L"Button1000";
+			this->Button1000->Size = System::Drawing::Size(150, 110);
+			this->Button1000->TabIndex = 34;
+			this->Button1000->Click += gcnew System::EventHandler(this, &Card_OutForm::Button1000_Click);
 			// 
-			// jThinButton4
+			// Button500
 			// 
-			this->jThinButton4->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->jThinButton4->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton4->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton4->BorderColor = System::Drawing::Color::White;
-			this->jThinButton4->BorderRadius = 15;
-			this->jThinButton4->ButtonText = L"500";
-			this->jThinButton4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton4->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton4->ForeColors = System::Drawing::SystemColors::Info;
-			this->jThinButton4->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton4->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton4->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton4->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton4->LineThickness = 2;
-			this->jThinButton4->Location = System::Drawing::Point(528, 258);
-			this->jThinButton4->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
-			this->jThinButton4->Name = L"jThinButton4";
-			this->jThinButton4->Size = System::Drawing::Size(150, 110);
-			this->jThinButton4->TabIndex = 33;
+			this->Button500->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Button500->BackColor = System::Drawing::Color::Transparent;
+			this->Button500->BackgroundColor = System::Drawing::Color::Coral;
+			this->Button500->BorderColor = System::Drawing::Color::White;
+			this->Button500->BorderRadius = 15;
+			this->Button500->ButtonText = L"500";
+			this->Button500->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button500->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button500->ForeColors = System::Drawing::SystemColors::Info;
+			this->Button500->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->Button500->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->Button500->HoverFontColor = System::Drawing::Color::White;
+			this->Button500->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Button500->LineThickness = 2;
+			this->Button500->Location = System::Drawing::Point(528, 258);
+			this->Button500->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
+			this->Button500->Name = L"Button500";
+			this->Button500->Size = System::Drawing::Size(150, 110);
+			this->Button500->TabIndex = 33;
+			this->Button500->Click += gcnew System::EventHandler(this, &Card_OutForm::Button500_Click);
 			// 
-			// jThinButton3
+			// Button200
 			// 
-			this->jThinButton3->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->jThinButton3->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton3->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton3->BorderColor = System::Drawing::Color::White;
-			this->jThinButton3->BorderRadius = 15;
-			this->jThinButton3->ButtonText = L"200";
-			this->jThinButton3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton3->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton3->ForeColors = System::Drawing::SystemColors::Info;
-			this->jThinButton3->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton3->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton3->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton3->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton3->LineThickness = 2;
-			this->jThinButton3->Location = System::Drawing::Point(374, 258);
-			this->jThinButton3->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
-			this->jThinButton3->Name = L"jThinButton3";
-			this->jThinButton3->Size = System::Drawing::Size(150, 110);
-			this->jThinButton3->TabIndex = 32;
+			this->Button200->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Button200->BackColor = System::Drawing::Color::Transparent;
+			this->Button200->BackgroundColor = System::Drawing::Color::Coral;
+			this->Button200->BorderColor = System::Drawing::Color::White;
+			this->Button200->BorderRadius = 15;
+			this->Button200->ButtonText = L"200";
+			this->Button200->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button200->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button200->ForeColors = System::Drawing::SystemColors::Info;
+			this->Button200->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->Button200->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->Button200->HoverFontColor = System::Drawing::Color::White;
+			this->Button200->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Button200->LineThickness = 2;
+			this->Button200->Location = System::Drawing::Point(374, 258);
+			this->Button200->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
+			this->Button200->Name = L"Button200";
+			this->Button200->Size = System::Drawing::Size(150, 110);
+			this->Button200->TabIndex = 32;
+			this->Button200->Click += gcnew System::EventHandler(this, &Card_OutForm::Button200_Click);
 			// 
-			// jThinButton2
+			// Button100
 			// 
-			this->jThinButton2->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->jThinButton2->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton2->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton2->BorderColor = System::Drawing::Color::White;
-			this->jThinButton2->BorderRadius = 15;
-			this->jThinButton2->ButtonText = L"100";
-			this->jThinButton2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton2->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton2->ForeColors = System::Drawing::SystemColors::Info;
-			this->jThinButton2->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton2->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton2->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton2->LineThickness = 2;
-			this->jThinButton2->Location = System::Drawing::Point(528, 147);
-			this->jThinButton2->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
-			this->jThinButton2->Name = L"jThinButton2";
-			this->jThinButton2->Size = System::Drawing::Size(150, 110);
-			this->jThinButton2->TabIndex = 31;
+			this->Button100->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Button100->BackColor = System::Drawing::Color::Transparent;
+			this->Button100->BackgroundColor = System::Drawing::Color::Coral;
+			this->Button100->BorderColor = System::Drawing::Color::White;
+			this->Button100->BorderRadius = 15;
+			this->Button100->ButtonText = L"100";
+			this->Button100->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button100->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button100->ForeColors = System::Drawing::SystemColors::Info;
+			this->Button100->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->Button100->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->Button100->HoverFontColor = System::Drawing::Color::White;
+			this->Button100->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Button100->LineThickness = 2;
+			this->Button100->Location = System::Drawing::Point(528, 147);
+			this->Button100->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
+			this->Button100->Name = L"Button100";
+			this->Button100->Size = System::Drawing::Size(150, 110);
+			this->Button100->TabIndex = 31;
+			this->Button100->Click += gcnew System::EventHandler(this, &Card_OutForm::Button100_Click);
 			// 
-			// jThinButton1
+			// Button50
 			// 
-			this->jThinButton1->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->jThinButton1->BackColor = System::Drawing::Color::Transparent;
-			this->jThinButton1->BackgroundColor = System::Drawing::Color::Coral;
-			this->jThinButton1->BorderColor = System::Drawing::Color::White;
-			this->jThinButton1->BorderRadius = 15;
-			this->jThinButton1->ButtonText = L"50";
-			this->jThinButton1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton1->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
-			this->jThinButton1->ForeColors = System::Drawing::SystemColors::Info;
-			this->jThinButton1->HoverBackground = System::Drawing::Color::OrangeRed;
-			this->jThinButton1->HoverBorder = System::Drawing::Color::OrangeRed;
-			this->jThinButton1->HoverFontColor = System::Drawing::Color::White;
-			this->jThinButton1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->jThinButton1->LineThickness = 2;
-			this->jThinButton1->Location = System::Drawing::Point(374, 147);
-			this->jThinButton1->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
-			this->jThinButton1->Name = L"jThinButton1";
-			this->jThinButton1->Size = System::Drawing::Size(150, 110);
-			this->jThinButton1->TabIndex = 30;
+			this->Button50->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Button50->BackColor = System::Drawing::Color::Transparent;
+			this->Button50->BackgroundColor = System::Drawing::Color::Coral;
+			this->Button50->BorderColor = System::Drawing::Color::White;
+			this->Button50->BorderRadius = 15;
+			this->Button50->ButtonText = L"50";
+			this->Button50->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button50->Font_Size = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold));
+			this->Button50->ForeColors = System::Drawing::SystemColors::Info;
+			this->Button50->HoverBackground = System::Drawing::Color::OrangeRed;
+			this->Button50->HoverBorder = System::Drawing::Color::OrangeRed;
+			this->Button50->HoverFontColor = System::Drawing::Color::White;
+			this->Button50->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Button50->LineThickness = 2;
+			this->Button50->Location = System::Drawing::Point(374, 147);
+			this->Button50->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
+			this->Button50->Name = L"Button50";
+			this->Button50->Size = System::Drawing::Size(150, 110);
+			this->Button50->TabIndex = 30;
+			this->Button50->Click += gcnew System::EventHandler(this, &Card_OutForm::Button50_Click);
 			// 
 			// SummOfWithdrowal
 			// 
@@ -543,12 +555,12 @@ namespace Diploma {
 			this->Controls->Add(this->SummOfWithdrowal);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->WithdrowalButton);
-			this->Controls->Add(this->jThinButton6);
-			this->Controls->Add(this->jThinButton5);
-			this->Controls->Add(this->jThinButton4);
-			this->Controls->Add(this->jThinButton3);
-			this->Controls->Add(this->jThinButton2);
-			this->Controls->Add(this->jThinButton1);
+			this->Controls->Add(this->Button2000);
+			this->Controls->Add(this->Button1000);
+			this->Controls->Add(this->Button500);
+			this->Controls->Add(this->Button200);
+			this->Controls->Add(this->Button100);
+			this->Controls->Add(this->Button50);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label3);
@@ -586,17 +598,29 @@ namespace Diploma {
 	}
 	private: System::Void WithdrowalButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		int SummTxt;
+		try
+		{
+			SummTxt = Convert::ToInt32(SummOfWithdrowal->TextName);
+		}
+		catch (const System::FormatException^ ex) {
+			MessageBox::Show("Incorect format!");
+		}
 		if (SummOfWithdrowal->TextName == "") {
 			MessageBox::Show("Summ can`t be empty");
 		}
-		else if (SummTxt < 50 || SummTxt > 50000) {
-			MessageBox::Show("Input summ between 50 and 50000");
+		if (SummOfWithdrowal->TextName != "") {
+
+			SummTxt = Convert::ToInt32(SummOfWithdrowal->TextName);
 		}
-		else if (SummTxt > userBalance)
+		if (SummTxt > Convert::ToInt32(n->Balance))
 		{
-			MessageBox::Show("Not anoutgh money on the balance");
-		} 
-		else{
+			MessageBox::Show("Not enought money on balance");
+		}
+		if (SummTxt < 50 || SummTxt > 50000 || SummTxt % 50 != 0) {
+			MessageBox::Show("Input summ between 50 and 50000 and multiple of fifty");
+		}
+
+		else {
 			SummTxt = Convert::ToInt32(SummOfWithdrowal->TextName);
 			f2.UpdateBalance(n, -SummTxt);
 			this->Hide();
@@ -604,5 +628,73 @@ namespace Diploma {
 			_EndForm2->ShowDialog();
 		}
 	}
-	};
+	private: System::Void Button50_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt1;
+		if (SummTxt1 > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		f2.UpdateBalance(n, -50);
+		this->Hide();
+		EndForm^ _EndForm2 = gcnew EndForm();
+		_EndForm2->ShowDialog();
+	}
+	private: System::Void Button100_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt1;
+		if (SummTxt1 > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		f2.UpdateBalance(n, -100);
+		this->Hide();
+		EndForm^ _EndForm2 = gcnew EndForm();
+		_EndForm2->ShowDialog();
+	}
+	private: System::Void Button200_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt1;
+		if (SummTxt1 > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		f2.UpdateBalance(n, -200);
+		this->Hide();
+		EndForm^ _EndForm2 = gcnew EndForm();
+		_EndForm2->ShowDialog();
+	}
+	private: System::Void Button500_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt1;
+		if (SummTxt1 > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		f2.UpdateBalance(n, -500);
+		this->Hide();
+		EndForm^ _EndForm2 = gcnew EndForm();
+		_EndForm2->ShowDialog();
+	}
+	private: System::Void Button1000_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt1;
+		if (SummTxt1 > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		f2.UpdateBalance(n, -1000);
+		this->Hide();
+		EndForm^ _EndForm2 = gcnew EndForm();
+		_EndForm2->ShowDialog();
+	}
+	private: System::Void Button2000_Click(System::Object^ sender, System::EventArgs^ e) {
+		int SummTxt1;
+		if (SummTxt1 > Convert::ToInt32(n->Balance))
+		{
+			MessageBox::Show("Not enought money on balance");
+		}
+		f2.UpdateBalance(n, -2000);
+		this->Hide();
+		EndForm^ _EndForm2 = gcnew EndForm();
+		_EndForm2->ShowDialog();
+	}
+
+
+};
 }

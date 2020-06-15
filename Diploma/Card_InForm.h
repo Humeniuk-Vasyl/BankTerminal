@@ -1,5 +1,6 @@
 #pragma once
 #include <stdlib.h>
+#include <iostream>
 #include "ParametersClass.h"
 #include "DBFicsation.h"
 #include "EndForm.h"
@@ -264,6 +265,7 @@ namespace Diploma {
 			this->Button50->Name = L"Button50";
 			this->Button50->Size = System::Drawing::Size(150, 117);
 			this->Button50->TabIndex = 23;
+			this->Button50->Click += gcnew System::EventHandler(this, &Card_InForm::Button50_Click);
 			// 
 			// Button100
 			// 
@@ -289,6 +291,7 @@ namespace Diploma {
 			this->Button100->Name = L"Button100";
 			this->Button100->Size = System::Drawing::Size(150, 117);
 			this->Button100->TabIndex = 24;
+			this->Button100->Click += gcnew System::EventHandler(this, &Card_InForm::Button100_Click);
 			// 
 			// Button200
 			// 
@@ -314,6 +317,7 @@ namespace Diploma {
 			this->Button200->Name = L"Button200";
 			this->Button200->Size = System::Drawing::Size(150, 117);
 			this->Button200->TabIndex = 25;
+			this->Button200->Click += gcnew System::EventHandler(this, &Card_InForm::Button200_Click);
 			// 
 			// Button500
 			// 
@@ -339,6 +343,7 @@ namespace Diploma {
 			this->Button500->Name = L"Button500";
 			this->Button500->Size = System::Drawing::Size(150, 117);
 			this->Button500->TabIndex = 26;
+			this->Button500->Click += gcnew System::EventHandler(this, &Card_InForm::Button500_Click);
 			// 
 			// Button1000
 			// 
@@ -364,6 +369,7 @@ namespace Diploma {
 			this->Button1000->Name = L"Button1000";
 			this->Button1000->Size = System::Drawing::Size(150, 117);
 			this->Button1000->TabIndex = 27;
+			this->Button1000->Click += gcnew System::EventHandler(this, &Card_InForm::Button1000_Click);
 			// 
 			// Button2000
 			// 
@@ -389,6 +395,7 @@ namespace Diploma {
 			this->Button2000->Name = L"Button2000";
 			this->Button2000->Size = System::Drawing::Size(150, 117);
 			this->Button2000->TabIndex = 28;
+			this->Button2000->Click += gcnew System::EventHandler(this, &Card_InForm::Button2000_Click);
 			// 
 			// ReplanishButton
 			// 
@@ -665,22 +672,73 @@ namespace Diploma {
 		this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 	}
 	private: System::Void ReplanishButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		//Using the card in/out function
-
 		int SummTxt;
+		try
+		{
+			SummTxt = Convert::ToInt32(SummOfReplanishment->TextName);
+		}
+		catch (const System::FormatException^ ex) {
+			MessageBox::Show("Incorect format!");
+		}
 		if (SummOfReplanishment->TextName == "") {
 			MessageBox::Show("Summ can`t be empty");
 		}
-		else if (SummTxt < 50 || SummTxt > 50000) {
-			MessageBox::Show("Input summ between 50 and 50000");
+		if (SummOfReplanishment->TextName != "") {
+
+			SummTxt = Convert::ToInt32(SummOfReplanishment->TextName);
+		}
+		if (SummTxt < 50 || SummTxt > 50000 || SummTxt % 50 != 0) {
+			MessageBox::Show("Input summ between 50 and 50000 and multiple of fifty");
 		}
 		else {
-			SummTxt = Convert::ToInt32(SummOfReplanishment->TextName);
+			//Using the card in/out function
 			f2.UpdateBalance(n, SummTxt);
 			this->Hide();
 			EndForm^ _EndForm1 = gcnew EndForm();
 			_EndForm1->ShowDialog();
 		}
+	}
+	private: System::Void Button50_Click(System::Object^ sender, System::EventArgs^ e) {
+		//Using the card in/out function
+		f2.UpdateBalance(n, 50);
+		this->Hide();
+		EndForm^ _EndForm1 = gcnew EndForm();
+		_EndForm1->ShowDialog();
+	}
+	private: System::Void Button100_Click(System::Object^ sender, System::EventArgs^ e) {
+		//Using the card in/out function
+		f2.UpdateBalance(n, 100);
+		this->Hide();
+		EndForm^ _EndForm1 = gcnew EndForm();
+		_EndForm1->ShowDialog();
+	}
+	private: System::Void Button200_Click(System::Object^ sender, System::EventArgs^ e) {
+		//Using the card in/out function
+		f2.UpdateBalance(n, 200);
+		this->Hide();
+		EndForm^ _EndForm1 = gcnew EndForm();
+		_EndForm1->ShowDialog();
+	}
+	private: System::Void Button500_Click(System::Object^ sender, System::EventArgs^ e) {
+		//Using the card in/out function
+		f2.UpdateBalance(n, 500);
+		this->Hide();
+		EndForm^ _EndForm1 = gcnew EndForm();
+		_EndForm1->ShowDialog();
+	}
+	private: System::Void Button1000_Click(System::Object^ sender, System::EventArgs^ e) {
+		//Using the card in/out function
+		f2.UpdateBalance(n, 1000);
+		this->Hide();
+		EndForm^ _EndForm1 = gcnew EndForm();
+		_EndForm1->ShowDialog();
+	}
+	private: System::Void Button2000_Click(System::Object^ sender, System::EventArgs^ e) {
+		//Using the card in/out function
+		f2.UpdateBalance(n, 2000);
+		this->Hide();
+		EndForm^ _EndForm1 = gcnew EndForm();
+		_EndForm1->ShowDialog();
 	}
 	};
 }

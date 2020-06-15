@@ -162,5 +162,26 @@ public: void UpdateBalance(ParametersClass^ n, int SummTxt) {
 		// Completed
 	}
 }
+public: void UpdateDeposit(ParametersClass^ n, int SummTxt) {
+	try {
+		// Connection to DB
+		ConnectToDB();
+		int StartSummDeposit = Convert::ToInt32(n->Deposit);
+		StartSummDeposit += SummTxt;
+		String^ FinishSummDeposit = Convert::ToString(StartSummDeposit);
+		String^ cmdText2 = "Update dbo.Clients SET Deposit = @Deposit Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
+		SqlCommand^ cmd2 = gcnew SqlCommand(cmdText2, conn);
+		cmd2->Parameters->AddWithValue("@Deposit", FinishSummDeposit);
+		conn->Open();
+		cmd2->ExecuteNonQuery();
+	}
+	finally {
+		if (conn != nullptr)
+		{
+			conn->Close();
+		}
+		// Completed
+	}
+}
 
 };
