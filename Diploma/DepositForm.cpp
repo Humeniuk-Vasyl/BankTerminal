@@ -595,8 +595,7 @@ inline System::Void Diploma::DepositForm::DepositButton_Click(System::Object^ se
 	if (DepositSumm->TextName == "") {
 		MessageBox::Show("Summ can`t be empty");
 	}
-	if (SummTxt > Convert::ToInt32(n->Balance))
-	{
+	if (SummTxt > Convert::ToInt32(n->Balance)) {
 		MessageBox::Show("Not enought money on balance");
 	}
 	if (SummTxt < 1000 || SummTxt > 20000 || SummTxt % 100 != 0) {

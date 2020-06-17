@@ -55,6 +55,6 @@ namespace Diploma {
 	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 		   //config the user data submit button
-	private: System::Void SubmitButtton_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void SubmitButton_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

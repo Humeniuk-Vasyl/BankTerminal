@@ -26,7 +26,7 @@ namespace Diploma {
 	private: System::Windows::Forms::ToolStripMenuItem^ fileToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ exitToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
-	private: System::Windows::Forms::Panel^ panel1;
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::ToolStripMenuItem^ menuToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label3;

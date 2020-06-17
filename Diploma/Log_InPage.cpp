@@ -49,7 +49,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 	});
 	this->menuStrip1->Location = System::Drawing::Point(0, 0);
 	this->menuStrip1->Name = L"menuStrip1";
-	this->menuStrip1->Size = System::Drawing::Size(532, 27);
+	this->menuStrip1->Size = System::Drawing::Size(532, 28);
 	this->menuStrip1->TabIndex = 2;
 	this->menuStrip1->Text = L"menuStrip1";
 	// 
@@ -62,7 +62,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 	this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-	this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+	this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 	this->fileToolStripMenuItem->Text = L"Actions";
 	// 
 	// exitToolStripMenuItem
@@ -85,7 +85,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 	this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 	this->aboutToolStripMenuItem->Text = L"About";
 	this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Log_InPage::aboutToolStripMenuItem_Click);
 	// 
@@ -208,7 +208,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 	this->SubmitButton->Name = L"SubmitButton";
 	this->SubmitButton->Size = System::Drawing::Size(224, 83);
 	this->SubmitButton->TabIndex = 10;
-	this->SubmitButton->Click += gcnew System::EventHandler(this, &Log_InPage::SubmitButtton_Click);
+	this->SubmitButton->Click += gcnew System::EventHandler(this, &Log_InPage::SubmitButton_Click);
 	// 
 	// jDragControl1
 	// 
@@ -223,7 +223,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 	this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 	this->panel1->Controls->Add(this->label4);
 	this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-	this->panel1->Location = System::Drawing::Point(0, 27);
+	this->panel1->Location = System::Drawing::Point(0, 28);
 	this->panel1->Name = L"panel1";
 	this->panel1->Size = System::Drawing::Size(532, 100);
 	this->panel1->TabIndex = 11;
@@ -282,9 +282,10 @@ inline System::Void Diploma::Log_InPage::exitToolStripMenuItem_Click(System::Obj
 	exit(0);
 }
 inline System::Void Diploma::Log_InPage::aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show("This is Log-In page.\n Please fill all columns.\nGood luck.");
+	MessageBox::Show("This is Log-In page.\nPlease fill all columns.\nGood luck.");
 }
-inline System::Void Diploma::Log_InPage::SubmitButtton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+inline System::Void Diploma::Log_InPage::SubmitButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Creating class object of "DBFicsation"
 	DBFicsation DBF1;
 	ParametersClass^ n1 = gcnew ParametersClass();
