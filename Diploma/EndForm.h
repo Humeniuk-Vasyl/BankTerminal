@@ -40,11 +40,12 @@ namespace Diploma {
 	private: System::Windows::Forms::ToolStripMenuItem^ exitToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Label^ label2;
+
+
 	private: System::Windows::Forms::Label^ label1;
 	private: ::JThinButton::JThinButton^ MainMenuButton;
 	private: ::JThinButton::JThinButton^ EndButton;
+	private: System::Windows::Forms::Label^ label2;
 
 
 
@@ -68,13 +69,11 @@ namespace Diploma {
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->MainMenuButton = (gcnew ::JThinButton::JThinButton());
 			this->EndButton = (gcnew ::JThinButton::JThinButton());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
-			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -110,7 +109,7 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &EndForm::exitToolStripMenuItem_Click);
 			// 
@@ -139,32 +138,6 @@ namespace Diploma {
 			this->label3->Click += gcnew System::EventHandler(this, &EndForm::label3_Click);
 			this->label3->MouseLeave += gcnew System::EventHandler(this, &EndForm::label3_MouseLeave);
 			this->label3->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &EndForm::label3_MouseMove);
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::Transparent;
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->panel1->Controls->Add(this->label2);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 27);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(600, 100);
-			this->panel1->TabIndex = 7;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(65, 24);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(474, 49);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"END OF THE OPERATION";
-			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label1
 			// 
@@ -229,6 +202,21 @@ namespace Diploma {
 			this->EndButton->TabIndex = 12;
 			this->EndButton->Click += gcnew System::EventHandler(this, &EndForm::EndButton_Click);
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->Location = System::Drawing::Point(65, 88);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(474, 49);
+			this->label2->TabIndex = 2;
+			this->label2->Text = L"END OF THE OPERATION";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// EndForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -237,10 +225,10 @@ namespace Diploma {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(600, 488);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->EndButton);
 			this->Controls->Add(this->MainMenuButton);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -249,8 +237,6 @@ namespace Diploma {
 			this->Text = L"EndForm";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

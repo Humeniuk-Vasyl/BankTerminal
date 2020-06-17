@@ -620,7 +620,7 @@ inline System::Void Diploma::Card_InForm::exitToolStripMenuItem_Click(System::Ob
 	exit(0);
 }
 inline System::Void Diploma::Card_InForm::aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show(" This is card-replanisment form. \nU can choose your own summ or use fixed buttons.\n    Good luck");
+	MessageBox::Show("This is card-replanisment form. \nU can choose your own summ or use fixed buttons.\n    Good luck");
 }
 inline System::Void Diploma::Card_InForm::ReplanishButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	int SummTxt;
