@@ -666,6 +666,7 @@ namespace Diploma {
 		}
 		catch (const System::FormatException^ ex) {
 			MessageBox::Show("Incorect format!");
+			ex;
 		}
 		if (DepositSumm->TextName == "") {
 			MessageBox::Show("Summ can`t be empty");

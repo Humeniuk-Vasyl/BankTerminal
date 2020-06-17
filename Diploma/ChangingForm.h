@@ -85,6 +85,7 @@ namespace Diploma {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ChangingForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -122,7 +123,7 @@ namespace Diploma {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(700, 28);
+			this->menuStrip1->Size = System::Drawing::Size(700, 30);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -138,7 +139,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 26);
 			this->fileToolStripMenuItem->Text = L"Actions";
 			// 
 			// menuToolStripMenuItem
@@ -146,7 +147,7 @@ namespace Diploma {
 			this->menuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->menuToolStripMenuItem->Name = L"menuToolStripMenuItem";
-			this->menuToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->menuToolStripMenuItem->Size = System::Drawing::Size(138, 26);
 			this->menuToolStripMenuItem->Text = L"Menu";
 			this->menuToolStripMenuItem->Click += gcnew System::EventHandler(this, &ChangingForm::menuToolStripMenuItem_Click);
 			// 
@@ -157,7 +158,7 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(138, 26);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &ChangingForm::exitToolStripMenuItem_Click);
 			// 
@@ -169,7 +170,7 @@ namespace Diploma {
 				static_cast<System::Byte>(204)));
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 26);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// panel1
@@ -178,7 +179,7 @@ namespace Diploma {
 				static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 28);
+			this->panel1->Location = System::Drawing::Point(0, 30);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(700, 100);
 			this->panel1->TabIndex = 9;
@@ -217,14 +218,14 @@ namespace Diploma {
 			// 
 			this->ChangePIN_codeButton->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->ChangePIN_codeButton->BackColor = System::Drawing::Color::Transparent;
-			this->ChangePIN_codeButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->ChangePIN_codeButton->BackgroundColor = System::Drawing::Color::Transparent;
 			this->ChangePIN_codeButton->BorderColor = System::Drawing::Color::White;
 			this->ChangePIN_codeButton->BorderRadius = 34;
 			this->ChangePIN_codeButton->ButtonText = L"Змінити ПІН-код";
 			this->ChangePIN_codeButton->Font = (gcnew System::Drawing::Font(L"Impact", 19.2F));
 			this->ChangePIN_codeButton->Font_Size = (gcnew System::Drawing::Font(L"Impact", 19.2F));
-			this->ChangePIN_codeButton->ForeColors = System::Drawing::SystemColors::ControlLight;
+			this->ChangePIN_codeButton->ForeColors = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->ChangePIN_codeButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->ChangePIN_codeButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
@@ -254,14 +255,14 @@ namespace Diploma {
 			// 
 			this->ChangePhoneNumberButton->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->ChangePhoneNumberButton->BackColor = System::Drawing::Color::Transparent;
-			this->ChangePhoneNumberButton->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			this->ChangePhoneNumberButton->BackgroundColor = System::Drawing::Color::Transparent;
 			this->ChangePhoneNumberButton->BorderColor = System::Drawing::Color::White;
 			this->ChangePhoneNumberButton->BorderRadius = 34;
 			this->ChangePhoneNumberButton->ButtonText = L"Змінити номер";
 			this->ChangePhoneNumberButton->Font = (gcnew System::Drawing::Font(L"Impact", 19.2F));
 			this->ChangePhoneNumberButton->Font_Size = (gcnew System::Drawing::Font(L"Impact", 19.2F));
-			this->ChangePhoneNumberButton->ForeColors = System::Drawing::SystemColors::ControlLight;
+			this->ChangePhoneNumberButton->ForeColors = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->ChangePhoneNumberButton->HoverBackground = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->ChangePhoneNumberButton->HoverBorder = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
@@ -379,10 +380,10 @@ namespace Diploma {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::White;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(282, 148);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(137, 21);
@@ -392,10 +393,10 @@ namespace Diploma {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::White;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(84, 242);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(191, 21);
@@ -405,10 +406,10 @@ namespace Diploma {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::White;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label6->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label6->ForeColor = System::Drawing::Color::White;
 			this->label6->Location = System::Drawing::Point(379, 242);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(297, 21);
@@ -443,10 +444,10 @@ namespace Diploma {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::White;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(68, 332);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(213, 21);
@@ -456,10 +457,10 @@ namespace Diploma {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->BackColor = System::Drawing::Color::White;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label8->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label8->ForeColor = System::Drawing::Color::White;
 			this->label8->Location = System::Drawing::Point(369, 332);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(319, 21);
@@ -476,6 +477,8 @@ namespace Diploma {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(700, 560);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);

@@ -90,6 +90,7 @@ namespace Diploma {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Phone_InForm::typeid));
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -172,7 +173,7 @@ namespace Diploma {
 			this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+			this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
 			this->mainMenuToolStripMenuItem->Text = L"Main";
 			this->mainMenuToolStripMenuItem->Click += gcnew System::EventHandler(this, &Phone_InForm::mainMenuToolStripMenuItem_Click);
 			// 
@@ -184,7 +185,7 @@ namespace Diploma {
 			this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 				static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Phone_InForm::exitToolStripMenuItem_Click);
 			// 
@@ -239,8 +240,10 @@ namespace Diploma {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(6, 364);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(239, 19);
@@ -301,8 +304,10 @@ namespace Diploma {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(41, 156);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(273, 20);
@@ -312,8 +317,10 @@ namespace Diploma {
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->label6->ForeColor = System::Drawing::Color::White;
 			this->label6->Location = System::Drawing::Point(6, 428);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(134, 19);
@@ -390,7 +397,7 @@ namespace Diploma {
 			this->Button200->HoverFontColor = System::Drawing::Color::White;
 			this->Button200->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Button200->LineThickness = 2;
-			this->Button200->Location = System::Drawing::Point(528, 391);
+			this->Button200->Location = System::Drawing::Point(528, 393);
 			this->Button200->Margin = System::Windows::Forms::Padding(12, 12, 12, 12);
 			this->Button200->Name = L"Button200";
 			this->Button200->Size = System::Drawing::Size(150, 117);
@@ -416,7 +423,7 @@ namespace Diploma {
 			this->Button100->HoverFontColor = System::Drawing::Color::White;
 			this->Button100->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Button100->LineThickness = 2;
-			this->Button100->Location = System::Drawing::Point(374, 391);
+			this->Button100->Location = System::Drawing::Point(374, 393);
 			this->Button100->Margin = System::Windows::Forms::Padding(12, 12, 12, 12);
 			this->Button100->Name = L"Button100";
 			this->Button100->Size = System::Drawing::Size(150, 117);
@@ -442,7 +449,7 @@ namespace Diploma {
 			this->Button50->HoverFontColor = System::Drawing::Color::White;
 			this->Button50->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Button50->LineThickness = 2;
-			this->Button50->Location = System::Drawing::Point(528, 274);
+			this->Button50->Location = System::Drawing::Point(528, 273);
 			this->Button50->Margin = System::Windows::Forms::Padding(12, 12, 12, 12);
 			this->Button50->Name = L"Button50";
 			this->Button50->Size = System::Drawing::Size(150, 117);
@@ -468,7 +475,7 @@ namespace Diploma {
 			this->Button20->HoverFontColor = System::Drawing::Color::White;
 			this->Button20->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Button20->LineThickness = 2;
-			this->Button20->Location = System::Drawing::Point(374, 274);
+			this->Button20->Location = System::Drawing::Point(374, 273);
 			this->Button20->Margin = System::Windows::Forms::Padding(12, 12, 12, 12);
 			this->Button20->Name = L"Button20";
 			this->Button20->Size = System::Drawing::Size(150, 117);
@@ -494,7 +501,7 @@ namespace Diploma {
 			this->Button10->HoverFontColor = System::Drawing::Color::White;
 			this->Button10->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Button10->LineThickness = 2;
-			this->Button10->Location = System::Drawing::Point(528, 156);
+			this->Button10->Location = System::Drawing::Point(528, 153);
 			this->Button10->Margin = System::Windows::Forms::Padding(12, 12, 12, 12);
 			this->Button10->Name = L"Button10";
 			this->Button10->Size = System::Drawing::Size(150, 117);
@@ -520,7 +527,7 @@ namespace Diploma {
 			this->Button5->HoverFontColor = System::Drawing::Color::White;
 			this->Button5->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->Button5->LineThickness = 2;
-			this->Button5->Location = System::Drawing::Point(374, 156);
+			this->Button5->Location = System::Drawing::Point(374, 153);
 			this->Button5->Margin = System::Windows::Forms::Padding(12, 12, 12, 12);
 			this->Button5->Name = L"Button5";
 			this->Button5->Size = System::Drawing::Size(150, 117);
@@ -537,6 +544,7 @@ namespace Diploma {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(700, 584);
 			this->Controls->Add(this->PhoneReplButton);
 			this->Controls->Add(this->Button200);
@@ -593,6 +601,7 @@ namespace Diploma {
 		}
 		catch (const System::FormatException^ ex) {
 			MessageBox::Show("Incorect format!");
+			ex;
 		}
 		if (SummOfPhoneRepl->TextName == "") {
 			MessageBox::Show("Summ can`t be empty");
@@ -617,7 +626,7 @@ namespace Diploma {
 		}
 	}
 	private: System::Void Button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		int SummTxt1;
+		int SummTxt1 = 5;
 		if (SummTxt1 > Convert::ToInt32(n->Balance))
 		{
 			MessageBox::Show("Not enought money on balance");
@@ -628,7 +637,7 @@ namespace Diploma {
 		_EndForm2->ShowDialog();
 	}
 	private: System::Void Button10_Click(System::Object^ sender, System::EventArgs^ e) {
-		int SummTxt1;
+		int SummTxt1 = 10;
 		if (SummTxt1 > Convert::ToInt32(n->Balance))
 		{
 			MessageBox::Show("Not enought money on balance");
@@ -639,7 +648,7 @@ namespace Diploma {
 		_EndForm2->ShowDialog();
 	}
 	private: System::Void Button20_Click(System::Object^ sender, System::EventArgs^ e) {
-		int SummTxt1;
+		int SummTxt1 = 20;
 		if (SummTxt1 > Convert::ToInt32(n->Balance))
 		{
 			MessageBox::Show("Not enought money on balance");
@@ -650,7 +659,7 @@ namespace Diploma {
 		_EndForm2->ShowDialog();
 	}
 	private: System::Void Button50_Click(System::Object^ sender, System::EventArgs^ e) {
-		int SummTxt1;
+		int SummTxt1 = 50;
 		if (SummTxt1 > Convert::ToInt32(n->Balance))
 		{
 			MessageBox::Show("Not enought money on balance");
@@ -661,7 +670,7 @@ namespace Diploma {
 		_EndForm2->ShowDialog();
 	}
 	private: System::Void Button100_Click(System::Object^ sender, System::EventArgs^ e) {
-		int SummTxt1;
+		int SummTxt1 = 100;
 		if (SummTxt1 > Convert::ToInt32(n->Balance))
 		{
 			MessageBox::Show("Not enought money on balance");
@@ -672,7 +681,7 @@ namespace Diploma {
 		_EndForm2->ShowDialog();
 	}
 	private: System::Void Button200_Click(System::Object^ sender, System::EventArgs^ e) {
-		int SummTxt1;
+		int SummTxt1 = 200;
 		if (SummTxt1 > Convert::ToInt32(n->Balance))
 		{
 			MessageBox::Show("Not enought money on balance");
