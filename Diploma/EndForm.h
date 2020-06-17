@@ -29,10 +29,12 @@ namespace Diploma {
 	private: ::JThinButton::JThinButton^ MainMenuButton;
 	private: ::JThinButton::JThinButton^ EndButton;
 	private: System::Windows::Forms::Label^ label2;
+	private: ::JDragControl::JDragControl^ jDragControl1;
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// func for designer. don`t change
