@@ -8,8 +8,7 @@ using namespace System::Drawing;
 using namespace Data;
 using namespace Data::SqlClient;
 
-ref class ParametersClass
-{
+ref class ParametersClass {
 public:
 	static String^ cardNumber;
 	static property String^ CardNumber {

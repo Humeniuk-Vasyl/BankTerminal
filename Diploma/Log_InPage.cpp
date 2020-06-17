@@ -73,7 +73,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 	this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)),
 		static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(242)));
 	this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-	this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+	this->exitToolStripMenuItem->Size = System::Drawing::Size(123, 28);
 	this->exitToolStripMenuItem->Text = L"Exit";
 	this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Log_InPage::exitToolStripMenuItem_Click);
 	// 
@@ -87,6 +87,7 @@ inline void Diploma::Log_InPage::InitializeComponent(void)
 	this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
 	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
 	this->aboutToolStripMenuItem->Text = L"About";
+	this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Log_InPage::aboutToolStripMenuItem_Click);
 	// 
 	// label3
 	// 
@@ -280,68 +281,32 @@ inline System::Void Diploma::Log_InPage::label3_MouseLeave(System::Object^ sende
 inline System::Void Diploma::Log_InPage::exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	exit(0);
 }
+inline System::Void Diploma::Log_InPage::aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("This is Log-In page.\n Please fill all columns.\nGood luck.");
+}
 inline System::Void Diploma::Log_InPage::SubmitButtton_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Creating class object of "DBFicsation"
+	DBFicsation DBF1;
+	ParametersClass^ n1 = gcnew ParametersClass();
+
+	String^ CardNumber1 = CardNumberTxt->TextName;
+	String^ PIN_Code1 = PIN_CodeTxt->TextName;
+
+	n1->CardNumber = CardNumber1;
+	n1->PIN_Code = PIN_Code1;
 	if ((CardNumberTxt->TextName == "") || (PIN_CodeTxt->TextName == "")) {
 		MessageBox::Show("Please fill in all columns");
 	}
-	else {
-		//Creating class object of "DBFicsation"
-		DBFicsation DBF1;
-		ParametersClass^ n = gcnew ParametersClass();
-
-		String^ CardNumber1 = CardNumberTxt->TextName;
-		String^ PIN_Code1 = PIN_CodeTxt->TextName;
-
-		n->CardNumber = CardNumber1;
-		n->PIN_Code = PIN_Code1;
-
-		// Using Log_In_Submit function
-		//DBF1.Log_In_Submit(n);
-
-		SqlConnection^ conn;
-		SqlConnectionStringBuilder^ connStringBuilder;
-		try {
-			// Connection to DB
-			// Creation the connect to DB
-			// Data Source=ðîìàí-ïê\sqlexpress;Initial Catalog=ClientsDB;Integrated Security=True
-
-			connStringBuilder = gcnew SqlConnectionStringBuilder();
-			connStringBuilder->DataSource = "ðîìàí-ïê\\sqlexpress";
-			connStringBuilder->InitialCatalog = "ClientsDB";
-			connStringBuilder->IntegratedSecurity = true;
-
-			conn = gcnew SqlConnection(Convert::ToString(connStringBuilder));
-
-			String^ cmdText = "SELECT * FROM dbo.Clients Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
-			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
-
-			cmd->Parameters->AddWithValue("@CardNumber", n->CardNumber);
-			cmd->Parameters->AddWithValue("@PIN_Code", n->PIN_Code);
-			conn->Open();
-			SqlDataAdapter^ sda = gcnew SqlDataAdapter(cmdText, conn);
-			DataTable^ dtbl = gcnew DataTable();
-			sda->Fill(dtbl);
-			cmd->ExecuteNonQuery();
-
-			if (dtbl->Rows->Count == 1) {
-				ParametersClass^ n1 = gcnew ParametersClass();
-				DBF1.DataSelect(n1);
-				//MessageBox::Show("login successful!");
-				//goiòg to next page
-				this->Hide();
-				MainMenuPage^ _MainMenuPage1 = gcnew MainMenuPage();
-				_MainMenuPage1->ShowDialog();
-				this->Show();
-			}
-			else {
-				MessageBox::Show("Check your card number and PIN-code");
-			}
-		}
-		finally {
-			if (conn != nullptr) {
-				conn->Close();
-			}
-			// Completed
-		}
+	else if (DBF1.FindClone(n1) != 1) {
+		MessageBox::Show("Check your card number and PIN-code");
+	}
+	else
+	{
+		DBF1.DataSelect(n1);
+		//goiòg to next page
+		this->Hide();
+		MainMenuPage^ _MainMenuPage1 = gcnew MainMenuPage();
+		_MainMenuPage1->ShowDialog();
+		this->Show();
 	}
 }

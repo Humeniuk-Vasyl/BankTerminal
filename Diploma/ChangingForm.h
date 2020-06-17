@@ -64,13 +64,11 @@ namespace Diploma {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	private: System::Void label3_MouseLeave(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void menuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
-	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		exit(0);
-	}
+	private: System::Void menuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ChangePIN_codeButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ChangePhoneNumberButton_Click(System::Object^ sender, System::EventArgs^ e);
+	
 	};
 }

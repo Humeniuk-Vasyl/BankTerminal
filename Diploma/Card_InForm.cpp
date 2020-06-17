@@ -628,15 +628,19 @@ inline System::Void Diploma::Card_InForm::ReplanishButton_Click(System::Object^ 
 	try {
 		SummTxt = Convert::ToInt32(SummOfReplanishment->TextName);
 	}
-	catch (const System::FormatException^ ex) {
+	catch (const System::OverflowException^ ex1) {
+		MessageBox::Show("Number to small or to large for int type!");
+		ex1;
+	}
+	catch (const System::FormatException^ ex2) {
 		MessageBox::Show("Incorect format!");
-		ex;
+		ex2;
 	}
 	if (SummOfReplanishment->TextName == "") {
 		MessageBox::Show("Summ can`t be empty");
 	}
 	if (SummTxt < 50 || SummTxt > 50000 || SummTxt % 50 != 0) {
-		MessageBox::Show("Input summ between 50 and 50000 and multiple of fifty");
+		MessageBox::Show("Input summ between 50 and 50000 and multiple of 50");
 	}
 	else {
 		//Using the card in/out function

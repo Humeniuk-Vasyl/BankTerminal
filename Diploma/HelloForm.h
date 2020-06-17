@@ -19,7 +19,6 @@ namespace Diploma {
 
 	protected:
 
-		
 		/// delete all
 		~HelloForm();
 

@@ -56,7 +56,7 @@ inline void Diploma::ChangingForm::InitializeComponent(void)
 	});
 	this->menuStrip1->Location = System::Drawing::Point(0, 0);
 	this->menuStrip1->Name = L"menuStrip1";
-	this->menuStrip1->Size = System::Drawing::Size(700, 30);
+	this->menuStrip1->Size = System::Drawing::Size(700, 28);
 	this->menuStrip1->TabIndex = 5;
 	this->menuStrip1->Text = L"menuStrip1";
 	// 
@@ -72,7 +72,7 @@ inline void Diploma::ChangingForm::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 	this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-	this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 26);
+	this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 	this->fileToolStripMenuItem->Text = L"Actions";
 	// 
 	// menuToolStripMenuItem
@@ -103,8 +103,9 @@ inline void Diploma::ChangingForm::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 	this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 26);
+	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 	this->aboutToolStripMenuItem->Text = L"About";
+	this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &ChangingForm::aboutToolStripMenuItem_Click);
 	// 
 	// panel1
 	// 
@@ -112,7 +113,7 @@ inline void Diploma::ChangingForm::InitializeComponent(void)
 		static_cast<System::Int32>(static_cast<System::Byte>(242)));
 	this->panel1->Controls->Add(this->label2);
 	this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-	this->panel1->Location = System::Drawing::Point(0, 30);
+	this->panel1->Location = System::Drawing::Point(0, 28);
 	this->panel1->Name = L"panel1";
 	this->panel1->Size = System::Drawing::Size(700, 100);
 	this->panel1->TabIndex = 9;
@@ -441,19 +442,24 @@ inline void Diploma::ChangingForm::InitializeComponent(void)
 	this->PerformLayout();
 
 }
-
 inline System::Void Diploma::ChangingForm::label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	exit(0);
 }
-
 inline System::Void Diploma::ChangingForm::label3_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	this->label3->ForeColor = System::Drawing::Color::Tomato;
 }
-
 inline System::Void Diploma::ChangingForm::label3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	this->label3->ForeColor = System::Drawing::Color::Gainsboro;
 }
-
+inline System::Void Diploma::ChangingForm::menuToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+inline System::Void Diploma::ChangingForm::exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	exit(0);
+}
+inline System::Void Diploma::ChangingForm::aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("This is Changing Form/\nU can update your PIN-code or phone number/\ngood luck");
+}
 inline System::Void Diploma::ChangingForm::ChangePIN_codeButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	int PIN_CodeType, RePIN_CodeType;
 	//try-catch block for catch incorect PIN-Code Type
@@ -474,8 +480,7 @@ inline System::Void Diploma::ChangingForm::ChangePIN_codeButton_Click(System::Ob
 	else if (NewPINTxt->TextName != ReNewPINTxt->TextName) {
 		MessageBox::Show("PIN-codes don't match");
 	}
-	else if (PIN_CodeType < 1000 || PIN_CodeType>9999)
-	{
+	else if (PIN_CodeType < 1000 || PIN_CodeType>9999) {
 		MessageBox::Show("Incorect PIN-Code!\nPlease enter a 4 numbers");
 	}
 	else {
@@ -492,13 +497,13 @@ inline System::Void Diploma::ChangingForm::ChangePhoneNumberButton_Click(System:
 		Phone_Type = Convert::ToInt64(NewNumberTxt->TextName);
 		RePhone_Type = Convert::ToInt64(ReNewNumberTxt->TextName);
 	}
-	catch (const System::OverflowException^ ex2) {
+	catch (const System::OverflowException^ ex1) {
 		MessageBox::Show("Number to small or to large for int type!");
-		ex2;
+		ex1;
 	}
-	catch (const System::FormatException^ ex) {
+	catch (const System::FormatException^ ex2) {
 		MessageBox::Show("Incorect format!");
-		ex;
+		ex2;
 	}
 	if (NewNumberTxt->TextName == "" || ReNewNumberTxt->TextName == "" || OldPINTxt1->TextName == "")
 	{
@@ -511,8 +516,7 @@ inline System::Void Diploma::ChangingForm::ChangePhoneNumberButton_Click(System:
 	else if (NewNumberTxt->TextName != ReNewNumberTxt->TextName) {
 		MessageBox::Show("Phone Number don't match");
 	}
-	else if (Phone_Type < 100000000000 || Phone_Type > 999999999999)
-	{
+	else if (Phone_Type < 100000000000 || Phone_Type > 999999999999) {
 		MessageBox::Show("Phone Number not correct!\nPlease input a 12 numbers");
 	}
 	else

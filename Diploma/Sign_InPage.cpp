@@ -51,7 +51,7 @@ inline void Diploma::Sign_InPage::InitializeComponent(void)
 	});
 	this->menuStrip1->Location = System::Drawing::Point(0, 0);
 	this->menuStrip1->Name = L"menuStrip1";
-	this->menuStrip1->Size = System::Drawing::Size(514, 27);
+	this->menuStrip1->Size = System::Drawing::Size(514, 28);
 	this->menuStrip1->TabIndex = 3;
 	this->menuStrip1->Text = L"menuStrip1";
 	// 
@@ -66,7 +66,7 @@ inline void Diploma::Sign_InPage::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->fileToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 	this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-	this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 23);
+	this->fileToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 	this->fileToolStripMenuItem->Text = L"Actions";
 	// 
 	// mainMenuToolStripMenuItem
@@ -76,7 +76,7 @@ inline void Diploma::Sign_InPage::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->mainMenuToolStripMenuItem->ForeColor = System::Drawing::Color::Crimson;
 	this->mainMenuToolStripMenuItem->Name = L"mainMenuToolStripMenuItem";
-	this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+	this->mainMenuToolStripMenuItem->Size = System::Drawing::Size(133, 28);
 	this->mainMenuToolStripMenuItem->Text = L"Main";
 	this->mainMenuToolStripMenuItem->Click += gcnew System::EventHandler(this, &Sign_InPage::mainMenuToolStripMenuItem_Click);
 	// 
@@ -87,7 +87,7 @@ inline void Diploma::Sign_InPage::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->exitToolStripMenuItem->ForeColor = System::Drawing::Color::Crimson;
 	this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-	this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 28);
+	this->exitToolStripMenuItem->Size = System::Drawing::Size(133, 28);
 	this->exitToolStripMenuItem->Text = L"Exit";
 	this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Sign_InPage::exitToolStripMenuItem_Click);
 	// 
@@ -98,8 +98,9 @@ inline void Diploma::Sign_InPage::InitializeComponent(void)
 		static_cast<System::Byte>(204)));
 	this->aboutToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonFace;
 	this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 23);
+	this->aboutToolStripMenuItem->Size = System::Drawing::Size(72, 24);
 	this->aboutToolStripMenuItem->Text = L"About";
+	this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Sign_InPage::aboutToolStripMenuItem_Click);
 	// 
 	// label3
 	// 
@@ -160,7 +161,7 @@ inline void Diploma::Sign_InPage::InitializeComponent(void)
 	this->panel1->BackColor = System::Drawing::Color::Crimson;
 	this->panel1->Controls->Add(this->label2);
 	this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-	this->panel1->Location = System::Drawing::Point(0, 27);
+	this->panel1->Location = System::Drawing::Point(0, 28);
 	this->panel1->Name = L"panel1";
 	this->panel1->Size = System::Drawing::Size(514, 100);
 	this->panel1->TabIndex = 11;
@@ -374,9 +375,25 @@ inline System::Void Diploma::Sign_InPage::mainMenuToolStripMenuItem_Click(System
 inline System::Void Diploma::Sign_InPage::exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	exit(0);
 }
+inline System::Void Diploma::Sign_InPage::aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("This is Registration page.\n Please fill all columns.\nGood luck.");
+}
 inline System::Void Diploma::Sign_InPage::Sign_InSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Creating class object of "DBFicsation"
+	DBFicsation DBF1;
+	ParametersClass^ n = gcnew ParametersClass();
+
+	String^ CardNumber1 = CardNumberTxt->TextName;
+	String^ PIN_Code1 = PIN_CodeTxt->TextName;
+
+	n->CardNumber = CardNumber1;
+	n->PIN_Code = PIN_Code1;
 	if ((CardNumberTxt->TextName == "") || (PIN_CodeTxt->TextName == "") || (UserNameTxt->TextName == "")) {
 		MessageBox::Show("Input all data!");
+	}
+	else if (DBF1.FindClone(n)==1)
+	{
+		MessageBox::Show("This user already exists!.\nPlease Input different data.");
 	}
 	else {
 		//Creating class object of "DBFicsation"
