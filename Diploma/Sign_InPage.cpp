@@ -397,12 +397,12 @@ inline System::Void Diploma::Sign_InPage::Sign_InSubmit_Click(System::Object^ se
 	}
 	else {
 		//Creating class object of "DBFicsation"
-		DBFicsation DBF1;
+		DBFicsation DBF1_1;
 		if (PhoneNumberTxt->TextName == "") {
-			DBF1.Insert(CardNumberTxt->TextName, PIN_CodeTxt->TextName, UserNameTxt->TextName);
+			DBF1_1.Insert(CardNumberTxt->TextName, PIN_CodeTxt->TextName, UserNameTxt->TextName);
 		}
 		else {
-			DBF1.Insert(CardNumberTxt->TextName, PIN_CodeTxt->TextName, UserNameTxt->TextName, PhoneNumberTxt->TextName);
+			DBF1_1.Insert(CardNumberTxt->TextName, PIN_CodeTxt->TextName, UserNameTxt->TextName, PhoneNumberTxt->TextName);
 		}
 		this->Hide();
 		Log_InPage^ _LogInPage1 = gcnew Log_InPage();
