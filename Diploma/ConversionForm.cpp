@@ -705,7 +705,7 @@ inline System::Void Diploma::ConversionForm::CalculateButton_Click(System::Objec
 	double CNC;
 	double array[20] = { 0.0374,0.0332,0.0297,2.6062,   26.755,0.8884,0.7971,69.87,   30.1021,1.1256,0.8977,78.4449,   33.6604,1.2545,1.1145,87.4076,   0.3837,0.0143,0.0127,0.0114 };
 	try {
-		double CNC = Convert::ToDouble(ÑurrencyNumber1->TextName);
+		CNC = Convert::ToDouble(ÑurrencyNumber1->TextName);
 	}
 	catch (const System::OverflowException^ ex1) {
 		MessageBox::Show("Number to small or to large for int type!");
