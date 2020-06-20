@@ -98,29 +98,13 @@ int DBFicsation::FindClone(ParametersClass^ n)
 {
 	DataTable^ dtbl = gcnew DataTable();
 	try {
-		// Connection to DB
-		// Creation the connect to DB
-		// Data Source=роман-пк\sqlexpress;Initial Catalog=ClientsDB;Integrated Security=True
-
+		
 		ConnectToDB();
 
-		connStringBuilder = gcnew SqlConnectionStringBuilder();
-		connStringBuilder->DataSource = "роман-пк\\sqlexpress";
-		connStringBuilder->InitialCatalog = "ClientsDB";
-		connStringBuilder->IntegratedSecurity = true;
-
-		conn = gcnew SqlConnection(Convert::ToString(connStringBuilder));
-
 		String^ cmdText = "SELECT * FROM dbo.Clients Where CardNumber = '" + n->CardNumber + "' AND PIN_Code  = '" + n->PIN_Code + "'";
-		SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
-
-		cmd->Parameters->AddWithValue("@CardNumber", n->CardNumber);
-		cmd->Parameters->AddWithValue("@PIN_Code", n->PIN_Code);
 		conn->Open();
 		SqlDataAdapter^ sda = gcnew SqlDataAdapter(cmdText, conn);
-
 		sda->Fill(dtbl);
-		cmd->ExecuteNonQuery();
 	}
 	finally {
 		if (conn != nullptr) {
@@ -147,8 +131,7 @@ inline void DBFicsation::DataSelect(ParametersClass^ n) {
 		}
 	}
 	finally {
-		if (conn != nullptr)
-		{
+		if (conn != nullptr){
 			conn->Close();
 		}
 		// Completed

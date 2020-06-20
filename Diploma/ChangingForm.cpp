@@ -499,7 +499,7 @@ inline System::Void Diploma::ChangingForm::ChangePhoneNumberButton_Click(System:
 	else if (NewNumberTxt->TextName != ReNewNumberTxt->TextName) {
 		MessageBox::Show("Phone Number don't match");
 	}
-	else if (Phone_Type < 100000000000 || Phone_Type > 999999999999) {
+	else if (Phone_Type < 380000000000 || Phone_Type > 999999999999) {
 		MessageBox::Show("Phone Number not correct!\nPlease input a 12 numbers");
 	}
 	else
