@@ -301,8 +301,7 @@ inline System::Void Diploma::Log_InPage::SubmitButton_Click(System::Object^ send
 	else if (DBF1.FindClone(n1) != 1) {
 		MessageBox::Show("Check your card number and PIN-code");
 	}
-	else
-	{
+	else{
 		DBF1.DataSelect(n1);
 		//goiòg to next page
 		this->Hide();

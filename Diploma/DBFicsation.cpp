@@ -18,12 +18,9 @@ inline void DBFicsation::Insert(String^ CardNumber, String^ PIN_Code, String^ Us
 	try {
 		// Connection to DB
 		ConnectToDB();
-
 		String^ cmdText = "INSERT INTO dbo.Clients(CardNumber, PIN_Code, UserName, PhoneNumber) Values(@CardNumber, @PIN_Code, @UserName, @PhoneNumber)";
 		SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
-
 		// Set parameters
-
 		cmd->Parameters->AddWithValue("@CardNumber", CardNumber);
 		cmd->Parameters->AddWithValue("@PIN_Code", PIN_Code);
 		cmd->Parameters->AddWithValue("@UserName", UserName);
@@ -31,11 +28,14 @@ inline void DBFicsation::Insert(String^ CardNumber, String^ PIN_Code, String^ Us
 		conn->Open();
 		cmd->ExecuteNonQuery();
 	}
+	catch (const System::Data::SqlClient::SqlException^ Sign_InEr) {
+		MessageBox::Show("Incorect format!");
+		Sign_InEr;
+	}
 	finally {
 		if (conn != nullptr) {
 			conn->Close();
-		}
-		// Completed
+		}// Completed
 	}
 }
 // polimorf Insert function
@@ -43,23 +43,23 @@ inline void DBFicsation::Insert(String^ CardNumber, String^ PIN_Code, String^ Us
 	try {
 		// Connection to DB
 		ConnectToDB();
-
 		String^ cmdText = "INSERT INTO dbo.Clients(CardNumber, PIN_Code, UserName) Values(@CardNumber, @PIN_Code, @UserName)";
 		SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
-
 		// Set parameters
-
 		cmd->Parameters->AddWithValue("@CardNumber", CardNumber);
 		cmd->Parameters->AddWithValue("@PIN_Code", PIN_Code);
 		cmd->Parameters->AddWithValue("@UserName", UserName);
 		conn->Open();
 		cmd->ExecuteNonQuery();
 	}
+	catch (const System::Data::SqlClient::SqlException^ Sign_InEr2) {
+		MessageBox::Show("Incorect format!");
+		Sign_InEr2;
+	}
 	finally {
 		if (conn != nullptr) {
 			conn->Close();
-		}
-		// Completed
+		}// Completed
 	}
 }
 //Log_In_Submit function
