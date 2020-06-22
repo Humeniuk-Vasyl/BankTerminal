@@ -305,6 +305,8 @@ inline System::Void Diploma::Log_InPage::SubmitButton_Click(System::Object^ send
 		DBF1.DataSelect(n1);
 		//goiòg to next page
 		this->Hide();
+		CardNumberTxt->TextName = "";
+		PIN_CodeTxt->TextName = "";
 		MainMenuPage^ _MainMenuPage1 = gcnew MainMenuPage();
 		_MainMenuPage1->ShowDialog();
 		this->Show();
